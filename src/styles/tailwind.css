@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.category {
+  position: relative;
+}
+
+.category::before {
+  left: -24px;
+}
+
+.category::after {
+  right: -24px;
+}
+
+.category::before,
+.category::after {
+  content: '';
+  height: 1px;
+  width: 16px;
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+}

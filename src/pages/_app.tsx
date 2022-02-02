@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import 'styles/tailwind.css';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const MyApp = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
+
+export default MyApp;
