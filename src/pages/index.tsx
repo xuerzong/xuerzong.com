@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Layout from 'components/layout';
+import CustomerHead from 'components/head';
 import PostCard from 'components/post/card';
 import Post from 'interfaces/post';
 import { getAllPosts } from 'utils/api';
@@ -9,13 +9,14 @@ interface IndexPageProps {
 }
 
 const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => (
-  <Layout title="首页">
+  <>
+    <CustomerHead title="首页" />
     <section>
       {posts.map((item) => (
         <PostCard key={item.title} {...item} />
       ))}
     </section>
-  </Layout>
+  </>
 );
 
 export const getStaticProps = async () => {

@@ -1,17 +1,18 @@
 import { getAllPosts, getPostBySlug } from 'utils/api';
-import Layout from 'components/layout';
+import CustomerHead from 'components/head';
 import PostBody from 'components/post/body';
 import markdownToHtml from 'utils/markdown';
 
 const PostSlugPage = ({ post }) => (
-  <Layout title={post.slug}>
+  <>
+    <CustomerHead title={post.title} />
     <article>
       <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
       <main className="my-8">
         <PostBody content={post.content} />
       </main>
     </article>
-  </Layout>
+  </>
 );
 
 export default PostSlugPage;
