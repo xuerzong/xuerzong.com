@@ -1,6 +1,7 @@
 import { getAllPosts, getPostBySlug } from 'utils/api';
 import CustomerHead from 'components/head';
 import PostBody from 'components/post/body';
+import PostFooter from 'components/post/footer';
 import markdownToHtml from 'utils/markdown';
 
 const PostSlugPage = ({ post }) => (
@@ -12,6 +13,7 @@ const PostSlugPage = ({ post }) => (
         <PostBody content={post.content} />
       </main>
     </article>
+    <PostFooter slug={post.slug} />
   </>
 );
 
