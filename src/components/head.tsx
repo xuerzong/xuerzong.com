@@ -1,14 +1,29 @@
 import Head from 'next/head';
-import { WEB_NAME } from 'constants/config';
+import { WEB_NAME } from '@/constants/config';
 
 interface CustomerHeadProps {
   title: string;
+  tag?: string;
+  description?: string;
 }
 
-const CustomerHead: React.FC<CustomerHeadProps> = ({ title, children }) => {
+const CustomerHead: React.FC<CustomerHeadProps> = ({
+  title,
+  description,
+  children,
+}) => {
+  const realTitle = `${title} | ${WEB_NAME.toLocaleUpperCase()}`;
   return (
     <Head>
-      <title>{`${title} | ${WEB_NAME.toLocaleUpperCase()}`}</title>
+      <title>{realTitle}</title>
+      <meta property="og:title" content={realTitle} />
+
+      {description && (
+        <>
+          <meta name="description" content={description} />
+          <meta property="og:description" content={description} />
+        </>
+      )}
       {children}
     </Head>
   );

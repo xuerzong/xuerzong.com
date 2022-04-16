@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
-import { WEB_NAME } from 'constants/config';
+
+import { KEYWORD_LIST } from '@/constants/config';
 import Header from './header';
 import Footer from './footer';
 import Container from '../container';
@@ -22,7 +23,7 @@ const Layout: React.FC<Props> = ({ children }) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="author" content="xuerzong" />
-      <meta name="keyword" content="xuerzong,前端,web前端,博客" />
+      <meta name="keyword" content={KEYWORD_LIST.join(',')} />
       <meta name="description" content="脚踏实地，厚积薄发" />
       <meta name="robots" content="index, follow" />
     </Head>

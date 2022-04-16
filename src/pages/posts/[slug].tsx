@@ -6,7 +6,7 @@ import markdownToHtml from 'utils/markdown';
 
 const PostSlugPage = ({ post }) => (
   <>
-    <CustomerHead title={post.title} />
+    <CustomerHead title={post.title} description={post.description} />
     <article>
       <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
       <main className="my-8">

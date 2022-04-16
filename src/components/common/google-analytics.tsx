@@ -1,4 +1,9 @@
+import { DEV } from '@/constants/config';
+
 export const GoogleAnalytics = () => {
+  if (DEV) {
+    return null;
+  }
   return (
     <>
       <script
