@@ -6,7 +6,7 @@ interface PostFooterProps {
 
 const PostFooter: React.FC<PostFooterProps> = ({ slug }) => {
   return (
-    <div className="text-sm text-gray-800 bg-purple-100 p-4 border-l-4 border-purple-500 rounded">
+    <div className="text-sm text-gray-800 bg-primary-100 p-4 border-l-4 border-primary-500 rounded">
       <p className="mb-2">
         <strong>本文链接：</strong>
         <Link href={`/posts/${slug}`}>

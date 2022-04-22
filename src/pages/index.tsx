@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import CustomerHead from 'components/head';
-import PostCard from 'components/post/card';
-import Post from 'interfaces/post';
+import CustomerHead from '@/components/head';
+import PostCard from '@/components/post/card';
+import Post from '@/interfaces/post';
 import { getAllPosts } from 'utils/api';
 
 interface IndexPageProps {
@@ -10,7 +10,7 @@ interface IndexPageProps {
 
 const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => (
   <>
-    <CustomerHead title="首页" />
+    <CustomerHead title="首页" description="脚踏实地，厚积薄发" />
     <section>
       {posts.map((item) => (
         <PostCard key={item.title} {...item} />

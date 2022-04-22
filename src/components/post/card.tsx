@@ -14,7 +14,7 @@ const PostCard: React.FC<PostCardProps> = ({
 }) => (
   <article className="select-none">
     <Link href={`/posts/${slug}`} passHref>
-      <h1 className="inline-block text-lg my-2 font-bold decoration-4 hover:text-purple-500 cursor-pointer">
+      <h1 className="inline-block text-lg my-2 font-bold decoration-4 hover:text-primary-500 cursor-pointer">
         {title}
       </h1>
     </Link>

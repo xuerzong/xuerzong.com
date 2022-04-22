@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
         <Head>
           <GoogleAnalytics />
         </Head>
-        <body className="bg-white dark:bg-gray-900 dark:text-gray-300 transition-all">
+        <body className="bg-white dark:bg-dark dark:text-gray-300 transition-all">
           <Main />
           <NextScript />
         </body>

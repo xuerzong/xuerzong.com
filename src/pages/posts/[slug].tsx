@@ -1,12 +1,16 @@
 import { getAllPosts, getPostBySlug } from 'utils/api';
-import CustomerHead from 'components/head';
-import PostBody from 'components/post/body';
-import PostFooter from 'components/post/footer';
-import markdownToHtml from 'utils/markdown';
+import CustomerHead from '@/components/head';
+import PostBody from '@/components/post/body';
+import PostFooter from '@/components/post/footer';
+import markdownToHtml from '@/utils/markdown';
 
 const PostSlugPage = ({ post }) => (
   <>
-    <CustomerHead title={post.title} description={post.description} />
+    <CustomerHead
+      title={post.title}
+      description={post.description}
+      tags={post.tags}
+    />
     <article>
       <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
       <main className="my-8">
@@ -35,7 +39,9 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
     'coverImage',
+    'tags',
   ]);
+
   const content = (await markdownToHtml(post.content)) || '';
 
   return {
