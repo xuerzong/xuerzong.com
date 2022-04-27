@@ -1,3 +1,4 @@
+import { AiOutlineCalendar } from 'react-icons/ai';
 import { Calendar } from '@/components/icon';
 
 interface TimeProps {
@@ -6,9 +7,7 @@ interface TimeProps {
 
 const Time: React.FC<TimeProps> = ({ date }) => (
   <div className="flex items-center">
-    <span className="inline-block mr-1">
-      <Calendar />
-    </span>
+    <AiOutlineCalendar className="inline-block mr-1" />
     <time>{date}</time>
   </div>
 );

@@ -1,16 +1,24 @@
 import fs from 'fs';
-import { join } from 'path';
+import path from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = join(process.cwd(), '_posts');
+const contentDir = path.resolve(process.cwd(), 'content');
+const postsDir = path.resolve(contentDir, '_posts');
+
+export function getProfile() {
+  const mePath = path.resolve(contentDir, 'README.md');
+  const contents = fs.readFileSync(mePath, 'utf8');
+  const { content } = matter(contents);
+  return content;
+}
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(postsDir);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = path.resolve(postsDir, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
