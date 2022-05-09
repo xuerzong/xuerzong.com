@@ -5,3 +5,7 @@
 * NextJS
 * Typescript
 * Tailwindcss
+
+## License
+
+[MIT](./LICENSE)
