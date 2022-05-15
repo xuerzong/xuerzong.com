@@ -1,7 +1,8 @@
 import type { AppProps } from 'next/app';
 import Layout from '@/components/layout';
 import { ThemeProvider } from '@/contexts/theme';
-import 'styles/tailwind.css';
+import '@/styles/tailwind.css';
+import '@/styles/markdown-body.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

@@ -1,0 +1,83 @@
+$border-radius-base: 16px;
+
+.markdown-body {
+  --color: #3b82f6;
+  line-height: 1.75;
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: Recursive, ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  code {
+    color: var(--color);
+    font-weight: 500;
+    font-size: 0.875em;
+    padding-left: 0.125rem;
+    padding-right: 0.125rem;
+  }
+
+  pre {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: $border-radius-base;
+    overflow: hidden;
+
+    code {
+      padding: 1.5em !important;
+      color: #c9d1d9;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 2.5em;
+    margin-bottom: 1.25em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    margin-bottom: 0.875em;
+  }
+}
+
+.dark .markdown-body {
+  h1,
+  h2,
+  h3,
+  code,
+  a,
+  strong {
+    color: #fff;
+  }
+
+  pre {
+    code {
+      color: #c9d1d9;
+    }
+  }
+}

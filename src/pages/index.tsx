@@ -16,7 +16,7 @@ const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts, profile }) => {
     <>
       <CustomerHead title="首页" description="脚踏实地，厚积薄发" />
 
-      <section className="py-8 mb-12 border-b">
+      <section className="py-4 pt-4 mb-12 border-b">
         <PostBody content={profile} />
       </section>
 
