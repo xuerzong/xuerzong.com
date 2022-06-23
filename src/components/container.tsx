@@ -1,13 +1,11 @@
-import cls from 'classnames';
+import cls from 'classnames'
 
 interface ContainerProps {
-  className?: string;
+  className?: string
 }
 
 const Container: React.FC<ContainerProps> = ({ children, className }) => (
-  <div className={cls('max-w-screen-md mx-auto px-4 lg:px-0', className)}>
-    {children}
-  </div>
-);
+  <div className={cls('max-w-screen-lg mx-auto px-4 lg:px-0', className)}>{children}</div>
+)
 
-export default Container;
+export default Container

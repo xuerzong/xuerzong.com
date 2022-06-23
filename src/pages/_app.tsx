@@ -1,17 +1,24 @@
-import type { AppProps } from 'next/app';
-import Layout from '@/components/layout';
-import { ThemeProvider } from '@/contexts/theme';
-import '@/styles/tailwind.css';
-import '@/styles/markdown-body.css';
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
+import type { ThemeProviderProps } from 'next-themes/dist/types'
+import AppLayout from '@/layouts/app'
+import '@/styles/tailwind.css'
+import '@/styles/prism.css'
+
+const themeProviderProps: ThemeProviderProps = {
+  attribute: 'class',
+  defaultTheme: 'system',
+  storageKey: 'xuerzong-com-theme',
+}
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider>
-      <Layout>
+    <ThemeProvider {...themeProviderProps}>
+      <AppLayout>
         <Component {...pageProps} />
-      </Layout>
+      </AppLayout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default MyApp;
+export default MyApp

@@ -2,9 +2,13 @@
 
 ## 技术栈
 
-* NextJS
-* Typescript
-* Tailwindcss
+- NextJS
+- Typescript
+- Tailwindcss
+
+## How to use
+
+待更新
 
 ## License
 

@@ -1,5 +1,5 @@
-const color = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme');
+const color = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.tsx'],
@@ -15,4 +15,6 @@ module.exports = {
       },
     },
   },
-};
+
+  plugins: [require('@tailwindcss/typography')],
+}

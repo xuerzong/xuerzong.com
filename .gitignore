@@ -106,3 +106,7 @@ dist
 
 .DS_Store
 .vercel
+
+
+# Contentlayer
+.contentlayer
