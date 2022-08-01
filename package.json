@@ -1,6 +1,6 @@
 {
   "name": "xuerzong.com",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "author": "xuerzong <xuerzong@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -43,6 +43,7 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "smoothscroll-polyfill": "^0.4.4",
+    "tabler-icons-react": "^1.54.0",
     "unified": "^10.1.2",
     "unist-util-visit": "^4.1.0"
   },

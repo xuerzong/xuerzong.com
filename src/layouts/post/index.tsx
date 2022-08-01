@@ -13,13 +13,13 @@ const PostLayout: React.FC<PostLayoutProps> = ({ children, ...restProps }) => {
       <ReadingProcessBar />
       <PostHeader title={title} date={date} />
 
-      <div className="lg:grid lg:gap-8 lg:grid-cols-[auto,250px]">
+      <div className="lg:grid lg:gap-8">
         <article id="post" className="prose max-w-none dark:prose-invert mx-auto">
           {children}
         </article>
-        <aside>
+        {/* <aside>
           <TOC headings={headings} />
-        </aside>
+        </aside> */}
       </div>
 
       <ScrollTopBtn />
