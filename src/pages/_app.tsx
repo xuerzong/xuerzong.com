@@ -9,6 +9,7 @@ const themeProviderProps: ThemeProviderProps = {
   attribute: 'class',
   defaultTheme: 'system',
   storageKey: 'xuerzong-com-theme',
+  enableSystem: true,
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
