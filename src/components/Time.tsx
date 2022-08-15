@@ -1,6 +1,6 @@
-import { CalendarIcon } from '@heroicons/react/outline'
 import dayjs from 'dayjs'
 import { isString } from '@/utils/is'
+import Icon from './common/icons'
 
 interface TimeProps {}
 
@@ -12,9 +12,9 @@ const Time: React.FC<TimeProps> = ({ children }) => {
   }
 
   return (
-    <div className="inline-flex items-center">
-      <CalendarIcon className="w-4 h-4 mr-1" />
-      <time>{dayjs(children).format(formatStr)}</time>
+    <div className="font-mono">
+      <Icon name="calendarOutlined" className="inline-block w-4 h-4 mr-1 align-[-.125em]" />
+      <time className="leading-7">{dayjs(children).format(formatStr)}</time>
     </div>
   )
 }

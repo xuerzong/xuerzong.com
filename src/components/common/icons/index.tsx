@@ -1,5 +1,5 @@
 import React from 'react'
-import { Moon, Sun } from 'tabler-icons-react'
+import { Moon, Sun, Calendar } from 'tabler-icons-react'
 import { ComputerOutlinedIcon } from './Computer'
 import Github from './Github'
 
@@ -12,6 +12,7 @@ const iconMap = {
   computerOutlined: ComputerOutlinedIcon,
   sunOutlined: Sun,
   moonOutlined: Moon,
+  calendarOutlined: Calendar,
 }
 
 export type IconName = keyof typeof iconMap
