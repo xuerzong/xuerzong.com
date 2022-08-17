@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Container from '@/components/Container'
 import DarkBtn from '@/components/DarkBtn'
 import { WEB_NAME } from '@/constants/config'
+import Icon from '@/components/common/icons'
 
 const Header = () => {
   return (
@@ -16,7 +17,9 @@ const Header = () => {
       <Container className="flex items-center">
         <Link href="/">
           <div className="inline-flex items-center select-none cursor-pointer">
-            <Image src="/static/assets/logo.svg" alt="xuerzong" width={24} height={14} />
+            <span aria-label="logo" className="w-6 h-[14px]">
+              <Icon name="logoLight" />
+            </span>
             <h1 className="font-bold uppercase">{WEB_NAME}</h1>
           </div>
         </Link>

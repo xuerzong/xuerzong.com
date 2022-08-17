@@ -2,6 +2,7 @@ import React from 'react'
 import { Moon, Sun, Calendar } from 'tabler-icons-react'
 import { ComputerOutlinedIcon } from './Computer'
 import Github from './Github'
+import { LogoLight } from './Logo'
 
 export interface SVGIconProps {
   className?: string
@@ -13,6 +14,7 @@ const iconMap = {
   sunOutlined: Sun,
   moonOutlined: Moon,
   calendarOutlined: Calendar,
+  logoLight: LogoLight,
 }
 
 export type IconName = keyof typeof iconMap
