@@ -44,7 +44,11 @@ const DarkBtn: React.FC = () => {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="p-1 rounded-md bg-gray-100 dark:bg-gray-700">
+      <Menu.Button
+        id="mode-button"
+        name="mode"
+        className="p-1 rounded-md bg-gray-100 dark:bg-gray-700"
+      >
         <Icon name={curThemeItem.icon} className="w-5 h-5" />
       </Menu.Button>
 

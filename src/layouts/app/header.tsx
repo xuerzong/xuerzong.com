@@ -17,7 +17,7 @@ const Header = () => {
       <Container className="flex items-center">
         <Link href="/">
           <div className="inline-flex items-center select-none cursor-pointer">
-            <span aria-label="logo" className="w-6 h-[14px]">
+            <span className="inline-block w-6 h-[14px]">
               <Icon name="logoLight" />
             </span>
             <h1 className="font-bold uppercase">{WEB_NAME}</h1>

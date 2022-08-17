@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
         key={key}
         title={title}
         className={cls(
-          'flex flex-wrap items-center justify-center bg-opacity-10 hover:bg-opacity-20 py-2 ring-4 ring-current rounded whitespace-nowrap cursor-pointer',
+          'flex flex-wrap items-center justify-center bg-opacity-0 hover:bg-opacity-20 py-2 ring-4 ring-current rounded whitespace-nowrap cursor-pointer',
           className
         )}
       >
