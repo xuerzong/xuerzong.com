@@ -4,6 +4,7 @@ import type { ThemeProviderProps } from 'next-themes/dist/types'
 import AppLayout from '@/layouts/app'
 import '@/styles/tailwind.css'
 import '@/styles/prism.css'
+import '@/styles/global.css'
 
 const themeProviderProps: ThemeProviderProps = {
   attribute: 'class',

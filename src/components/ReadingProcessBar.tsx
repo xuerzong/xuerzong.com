@@ -1,4 +1,4 @@
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import { m, useViewportScroll, useTransform, LazyMotion, domAnimation } from 'framer-motion'
 import type { MotionStyle } from 'framer-motion'
 
 const ReadingProcessBar: React.FC = () => {
@@ -10,7 +10,11 @@ const ReadingProcessBar: React.FC = () => {
     height: '.25rem',
   }
 
-  return <motion.div className="fixed z-40 top-0 left-0 bg-primary-500" style={motionStyles} />
+  return (
+    <LazyMotion features={domAnimation}>
+      <m.div className="fixed z-40 top-0 left-0 bg-primary-500" style={motionStyles} />
+    </LazyMotion>
+  )
 }
 
 export default ReadingProcessBar

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 import { ArrowSmUpIcon } from '@heroicons/react/outline'
-import { motion } from 'framer-motion'
+import { domAnimation, LazyMotion, m } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 
 const ScrollTopBtn: React.FC = () => {
@@ -28,16 +28,18 @@ const ScrollTopBtn: React.FC = () => {
   }
 
   return (
-    <motion.button
-      className="fixed right-4 bottom-12 z-50 p-2 rounded bg-gray-200 dark:bg-gray-600"
-      animate={showState ? 'show' : 'notShow'}
-      variants={variants}
-      onClick={handleScrollTop}
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.8 }}
-    >
-      <ArrowSmUpIcon className="w-5 h-5" />
-    </motion.button>
+    <LazyMotion features={domAnimation}>
+      <m.button
+        className="fixed right-4 bottom-12 z-50 p-2 rounded bg-gray-200 dark:bg-gray-600"
+        animate={showState ? 'show' : 'notShow'}
+        variants={variants}
+        onClick={handleScrollTop}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8 }}
+      >
+        <ArrowSmUpIcon className="w-5 h-5" />
+      </m.button>
+    </LazyMotion>
   )
 }
 
