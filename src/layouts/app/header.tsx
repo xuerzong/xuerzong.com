@@ -1,18 +1,23 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import cls from 'classnames'
 
 import Container from '@/components/Container'
 import DarkBtn from '@/components/DarkBtn'
 import { WEB_NAME } from '@/constants/config'
 import Icon from '@/components/common/icons'
+import useWindowSrollYOffset from '@/hooks/useWindowSrollYOffset'
+import Navigation from './Navigation'
 
 const Header = () => {
+  const windowScrollYOffset = useWindowSrollYOffset(64)
+
   return (
     <header
       id="main-header"
-      aria-label="main-header"
       style={{ lineHeight: '4rem' }}
-      className="fixed w-full h-16 z-20 bg-white dark:bg-dark filter"
+      className={cls('fixed w-full h-16 z-20 bg-white dark:bg-dark filter', {
+        'shadow bg-opacity-95': !windowScrollYOffset,
+      })}
     >
       <Container className="flex items-center">
         <Link href="/">
@@ -25,6 +30,8 @@ const Header = () => {
         </Link>
 
         <div className="flex-1" />
+        <Navigation />
+        <div className="w-6"></div>
         <DarkBtn />
       </Container>
     </header>

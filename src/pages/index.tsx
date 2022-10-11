@@ -1,4 +1,7 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
+import Link from 'next/link'
+import { ArrowNarrowRight } from 'tabler-icons-react'
+
 import SEO from '@/components/SEO'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
@@ -13,14 +16,22 @@ interface IndexPageProps {
 }
 
 const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => {
+  const postsRender = posts.map((item) => <PostCard key={item.title} {...item} />)
+
   return (
     <>
       <SEO title="首页" description="脚踏实地，厚积薄发" />
       <Hero />
       <Section title="最近文章">
-        {posts.map((item) => (
-          <PostCard key={item.title} {...item} />
-        ))}
+        {postsRender}
+        <div className="text-center">
+          <Link href="/posts">
+            <a className="inline-flex items-center py-2 px-4 mt-6 text-md border rounded">
+              全部文章
+              <ArrowNarrowRight size={16} color="currentColor" />
+            </a>
+          </Link>
+        </div>
       </Section>
     </>
   )
