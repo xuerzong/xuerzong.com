@@ -7,7 +7,7 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
     <section>
       <h2
         id={`section-${title}`}
-        className="py-6 my-6 border-b text-2xl text-primary-500 dark:text-primary-400 font-bold dark:border-gray-500"
+        className="py-6 my-6 border-b text-3xl font-bold dark:border-gray-500"
       >
         {title}
       </h2>
