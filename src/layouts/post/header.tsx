@@ -2,12 +2,12 @@ import { Fragment } from 'react'
 import dayjs from 'dayjs'
 import { Book, CalendarTime } from 'tabler-icons-react'
 import type { Post } from 'contentlayer/generated'
-import Time from '@/components/Time'
 
-interface PostHeaderProps extends Pick<Post, 'title' | 'date' | 'readingTime'> {}
-
-const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime }) => {
-  console.log(readingTime)
+const PostHeader: React.FC<Pick<Post, 'title' | 'date' | 'readingTime'>> = ({
+  title,
+  date,
+  readingTime,
+}) => {
   return (
     <Fragment>
       <div className="py-6 mb-6 border-b">

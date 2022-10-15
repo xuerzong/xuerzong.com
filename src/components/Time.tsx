@@ -2,11 +2,9 @@ import dayjs from 'dayjs'
 import { isString } from '@/utils/is'
 import Icon from './common/icons'
 
-interface TimeProps {}
-
 const formatStr = 'YYYY.MM.DD'
 
-const Time: React.FC<TimeProps> = ({ children }) => {
+const Time: React.FC = ({ children }) => {
   if (!isString(children)) {
     throw new Error('The children of <Time /> must be a string')
   }

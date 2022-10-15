@@ -1,8 +1,6 @@
-import { AnchorHTMLAttributes } from 'react'
+import type { AnchorHTMLAttributes } from 'react'
 
-interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
-
-const Link: React.FC<LinkProps> = ({ href, ...restProps }) => {
+const Link: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, ...restProps }) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 
@@ -17,7 +15,7 @@ const Link: React.FC<LinkProps> = ({ href, ...restProps }) => {
     return <a href={href} {...restProps} />
   }
 
-  return <a target="_blank" href={href} {...restProps} />
+  return <a target="_blank" rel="noreferrer" href={href} {...restProps} />
 }
 
 export default Link

@@ -18,6 +18,7 @@ interface PostPageProps {
 const PostPage: NextPage<PostPageProps> = ({ posts }) => {
   const [searchKeyword, setSearchKeyword] = useState('')
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleSearch: ChangeEventHandler<HTMLInputElement> = useCallback(
     debounce((e) => {
       setSearchKeyword(e.target.value)
