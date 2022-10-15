@@ -1,0 +1,52 @@
+---
+title: 找出数组中的最大值
+tags:
+  - Array
+  - Javascript
+order: 0
+---
+
+## 暴力循环
+
+```javascript
+// 第一种写法
+const max = function(arr) {
+    let res = 0;
+    arr.forEach(e => {
+        res = Math.max(res, e);
+    })
+
+    return res;
+}
+
+// 第二种写法
+const max = function(arr) {
+    return arr.reduce((p, c) => Math.max(p, c));
+}
+```
+
+## 排序法
+
+```javascript
+const max = function(arr) {
+    let str = JSON.parse(JSON.stringify(arr));  // shallow clone
+    str.sort();
+
+    return str[str.length - 1];
+}
+```
+
+## 使用apply
+```javascript
+const max = function(arr) {
+    return Math.max.apply(null, arr);
+}
+```
+
+## ES6 拓展符
+
+```javascript
+const max = function(arr) {
+    return Math.max(...arr);
+}
+```

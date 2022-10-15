@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 
 import Container from '@/components/Container'
 import { KEYWORD_LIST } from '@/constants/config'
-import Header from './header'
-import Footer from './footer'
+import Header from './Header'
+import Footer from './Footer'
 
 type Props = {
   children?: ReactNode

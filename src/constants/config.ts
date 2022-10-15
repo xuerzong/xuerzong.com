@@ -12,3 +12,5 @@ export const DEV = process.env.NODE_ENV === 'development'
 export const EMAIL = 'xuerzong@gmail.com'
 
 export const GITHUB = 'xuerzong'
+
+export const TWITTER = 'xuerzong'

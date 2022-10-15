@@ -1,15 +1,15 @@
 import { ChangeEventHandler, useCallback, useState } from 'react'
 import type { NextPage } from 'next'
 
-import { sortContent, filterContent } from '@/utils/contentlayer'
 import SEO from '@/components/SEO'
 import PostCard from '@/components/PostCard'
 import SearchInput from '@/components/SearchInput'
 import Empty from '@/components/Empty'
+import { debounce } from '@/utils/lodash'
+import { sortContent, filterContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
 import type { Post } from 'contentlayer/generated'
-import { debounce } from '@/utils/lodash'
 
 interface PostPageProps {
   posts: Post[]
