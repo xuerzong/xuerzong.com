@@ -3,6 +3,10 @@ import dayjs from 'dayjs'
 import { Book, CalendarTime } from 'tabler-icons-react'
 import type { Post } from 'contentlayer/generated'
 
+const readingTimerFormat = (text: string) => {
+  return '约' + text.replace('min read', '').trim() + '分钟'
+}
+
 const PostHeader: React.FC<Pick<Post, 'title' | 'date' | 'readingTime'>> = ({
   title,
   date,
@@ -21,7 +25,7 @@ const PostHeader: React.FC<Pick<Post, 'title' | 'date' | 'readingTime'>> = ({
 
           <div className="flex items-center font-mono">
             <Book size={20} className="mr-2" />
-            <span>{readingTime.words}</span>
+            <span>{readingTimerFormat(readingTime.text)}</span>
           </div>
         </div>
       </div>

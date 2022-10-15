@@ -1,0 +1,52 @@
+---
+title: 将Youtube和Twitch视频嵌入Web应用
+tags:
+  - Youtube
+  - Twitch
+  - 视频
+  - HTML
+order: 1
+---
+
+## Youtube Video
+
+```tsx
+interface Props {
+  video: number
+  width: string | number
+  height: string | number
+  ...otherProps
+}
+
+const YoutubeVideo: React.FC<Props> = ({ video, ...restProps }) => {
+  return (
+    <iframe
+      {...restProps}
+      src={`https://www.youtube-nocookie.com/embed/${video}?&autoplay=1`}
+    />
+  )
+}
+```
+
+
+## Twitch Video
+
+官方文档：[Video & Clips](https://dev.twitch.tv/docs/embed/video-and-clips#non-interactive-inline-frames-for-live-streams-and-vods)
+
+```tsx
+interface Props {
+  video: number
+  width: string | number
+  height: string | number
+  ...otherProps
+}
+
+const TwitchVideo: React.FC<Props> = ({ video, ...restProps }) => {
+  return (
+    <iframe
+      {...restProps}
+      src={`https://player.twitch.tv/?video=v${video}&parent=${window.location.hostname}&autoplay=true`}
+    />
+  )
+}
+```

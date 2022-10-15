@@ -1,6 +1,6 @@
 {
   "name": "xuerzong.com",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "xuerzong <xuerzong@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -24,7 +24,6 @@
     "classnames": "^2.3.1",
     "contentlayer": "^0.2.5",
     "dayjs": "^1.11.5",
-    "framer-motion": "^6.3.12",
     "image-size": "^1.0.1",
     "lodash.throttle": "^4.1.1",
     "mdast-util-mdx": "^2.0.0",

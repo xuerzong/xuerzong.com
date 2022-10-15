@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { motion } from 'framer-motion'
-import Icon from '@/components/common/icons'
 
 enum Theme {
   Dark = 'dark',
@@ -21,13 +19,16 @@ const DarkBtn: React.FC = () => {
   }, [isMounted])
 
   return (
-    <motion.button aria-label="theme-btn" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+    <button className="relative z-40 md:z-0" aria-label="theme-btn">
       {isMounted && (
-        <div onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}>
-          <Icon className="w-6 h-6 text-current" name="sunOutlined" />
+        <div
+          className="text-lg w-6 h-6 text-current"
+          onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}
+        >
+          {isDarkTheme ? '🌛' : '🌞'}
         </div>
       )}
-    </motion.button>
+    </button>
   )
 }
 
