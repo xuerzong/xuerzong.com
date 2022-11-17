@@ -49,8 +49,6 @@
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.2",
     "@next/bundle-analyzer": "^12.1.6",
     "@tailwindcss/typography": "^0.5.2",
     "@types/lodash.throttle": "^4.1.7",
