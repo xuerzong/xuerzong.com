@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { type PropsWithChildren, useEffect, useRef, useState } from 'react'
 import cls from 'classnames'
 import { ClipboardCopyIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
 
@@ -46,7 +46,7 @@ const CopyBtn: React.FC<CopyBtnProps> = ({ className, onClick }) => {
   )
 }
 
-const Pre: React.FC = ({ children }) => {
+const Pre: React.FC<PropsWithChildren> = ({ children }) => {
   const preRef = useRef<HTMLDivElement>(null)
 
   const handleCopy = () => {

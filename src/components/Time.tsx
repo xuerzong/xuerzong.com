@@ -1,10 +1,11 @@
+import { type PropsWithChildren } from 'react'
 import dayjs from 'dayjs'
 import { isString } from '@/utils/is'
 import Icon from './common/icons'
 
 const formatStr = 'YYYY.MM.DD'
 
-const Time: React.FC = ({ children }) => {
+const Time: React.FC<PropsWithChildren> = ({ children }) => {
   if (!isString(children)) {
     throw new Error('The children of <Time /> must be a string')
   }

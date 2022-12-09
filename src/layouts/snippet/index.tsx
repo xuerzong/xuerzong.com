@@ -1,9 +1,12 @@
-import { Fragment } from 'react'
+import { Fragment, type PropsWithChildren } from 'react'
 import type { Snippet } from 'contentlayer/generated'
 import ScrollTopBtn from '@/components/ScrollTopBtn'
 import Header from './Header'
 
-const PostLayout: React.FC<Omit<Snippet, 'mdx'>> = ({ children, ...restProps }) => {
+const PostLayout: React.FC<PropsWithChildren<Omit<Snippet, 'mdx'>>> = ({
+  children,
+  ...restProps
+}) => {
   const { title } = restProps
 
   return (

@@ -1,3 +1,4 @@
+import { type PropsWithChildren } from 'react'
 import Head from 'next/head'
 import { WEB_NAME, KEYWORD_LIST } from '@/constants/config'
 
@@ -7,7 +8,12 @@ interface SEOProps {
   description?: string
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, tags = [], children }) => {
+const SEO: React.FC<PropsWithChildren<SEOProps>> = ({
+  title,
+  description,
+  tags = [],
+  children,
+}) => {
   const realTitle = `${title} | ${WEB_NAME.toLocaleUpperCase()}`
   return (
     <Head>
