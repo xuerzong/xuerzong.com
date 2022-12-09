@@ -1,8 +1,10 @@
+import { type PropsWithChildren } from 'react'
+
 interface SectionProps {
   title: string
 }
 
-const Section: React.FC<SectionProps> = ({ title, children }) => {
+const Section: React.FC<PropsWithChildren<SectionProps>> = ({ title, children }) => {
   return (
     <section>
       <h2

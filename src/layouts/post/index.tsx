@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, type PropsWithChildren } from 'react'
 import type { Post } from 'contentlayer/generated'
 import ScrollTopBtn from '@/components/ScrollTopBtn'
 import PostHeader from './header'
 
-const PostLayout: React.FC<Omit<Post, 'mdx'>> = ({ children, ...restProps }) => {
+const PostLayout: React.FC<PropsWithChildren<Omit<Post, 'mdx'>>> = ({ children, ...restProps }) => {
   const { title, date, readingTime } = restProps
 
   return (
