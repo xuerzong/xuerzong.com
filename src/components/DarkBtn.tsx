@@ -22,7 +22,7 @@ const DarkBtn: React.FC = () => {
     <button className="relative z-40 md:z-0" aria-label="theme-btn">
       {isMounted && (
         <div
-          className="text-lg w-6 h-6 text-current"
+          className="text-lg w-6 h-6 text-current leading-6"
           onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}
         >
           {isDarkTheme ? '🌛' : '🌞'}

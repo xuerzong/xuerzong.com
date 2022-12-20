@@ -11,6 +11,7 @@ module.exports = {
       },
 
       fontFamily: {
+        sans: ['Noto Sans SC', ...defaultTheme.fontFamily.sans],
         mono: ['Recursive', ...defaultTheme.fontFamily.mono],
       },
     },

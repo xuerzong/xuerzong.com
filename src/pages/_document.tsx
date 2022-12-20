@@ -11,6 +11,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Recursive:wght,CASL,MONO@300..700,1,1&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="bg-white dark:bg-dark dark:text-gray-300">
           <Main />
