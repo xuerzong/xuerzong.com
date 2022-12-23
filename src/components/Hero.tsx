@@ -1,4 +1,4 @@
-import { Download } from 'tabler-icons-react'
+import { ArrowNarrowRight } from 'tabler-icons-react'
 import Button from './common/Button'
 
 const Hero: React.FC = () => {
@@ -15,10 +15,12 @@ const Hero: React.FC = () => {
         一名99年有志青年，只希望我爱的人和爱我的人<strong>身体健康</strong>
       </p>
 
-      {/* <Button type='primary' className="mt-6 rounded-3xl">
-        下载简历
-        <Download className='icon inline-block w-4 h-4 ml-1' />
-      </Button> */}
+      <a href="https://resume.xuerzong.com" target="_blank" rel="noopener noreferrer">
+        <Button type="primary" className="mt-6 rounded-3xl">
+          查看简历
+          <ArrowNarrowRight className="icon inline-block w-4 h-4 ml-1" />
+        </Button>
+      </a>
     </section>
   )
 }
