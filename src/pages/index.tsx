@@ -27,12 +27,10 @@ const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => {
         ))}
         <div className="text-center mt-6">
           <Link href="/posts">
-            <a className="inline-block">
-              <Button className="rounded-3xl">
-                全部文章
-                <ArrowNarrowRight className="icon" size={16} color="currentColor" />
-              </Button>
-            </a>
+            <Button className="rounded-3xl">
+              全部文章
+              <ArrowNarrowRight className="icon" size={16} color="currentColor" />
+            </Button>
           </Link>
         </div>
       </Section>
