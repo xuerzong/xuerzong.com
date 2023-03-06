@@ -1,0 +1,161 @@
+---
+title: 使用Next.js创建全栈app
+description: Next.js是一个基于React的全栈应用程序开发框架，它可以帮助开发人员快速创建高性能的Web应用程序。
+category: '技术总结'
+tags:
+  - 学习
+  - 编程
+  - 前端总结
+  - Next.js
+  - 全栈
+date: '2023-03-03'
+---
+
+Next.js是一个基于React的全栈应用程序开发框架，它可以帮助开发人员快速创建高性能的Web应用程序。
+
+使用Next.js，可以轻松地构建一个完整的应用程序，包括前端和后端。
+
+![hero](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/hero.png)
+
+
+## 前端
+
+Next.js有很多的样式方案，[参考官网](https://nextjs.org/docs/basic-features/built-in-css-support)
+
+![frontend-style](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/frontend-style.png)
+
+### 原生css
+
+在Next.js中使用原生css，你可以直接在`_app.tsx`中全局引入
+
+```tsx:pages/_app.tsx
+import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/global.css'
+```
+
+或者为避免全局类名的冲突，也可以在组件文件中引入用`*.module.css`。
+
+```tsx:components/Button.tsx
+import styles from './button.module.css'
+
+<Button className={styles.button}>button</Button>
+```
+
+### Sass
+
+Next内置Sass支持，但在使用之前，你需要安装sass:
+
+```bash
+npm install --save-dev sass
+```
+
+其使用方法和`原生css`一致，也可以在`_app.tsx`中直接引入`*.scss`或在组件中引入`*.module.scss`。
+
+### Css in js
+
+```tsx:components/Button.tsx
+const Button = styled.button`
+  font-size: 1rem;
+`
+<Button>button</Button>
+<button style={{ fontSize: 16 }}>button</button>
+```
+
+### UI框架
+
+使用成熟的ui框架，我们能够快速的完成页面搭建。
+
+其中如果你习惯使用css，你可以选择：
+
+- [Ant Design](https://4x.ant.design/index-cn)
+
+如果你习惯使用css in js，你可以选择：
+
+- [Material UI](https://mui.com/)
+
+- [Chakra UI](https://chakra-ui.com/)
+
+前端是否需要使用UI框架，取决于具体的项目需求和开发团队的技术水平和偏好。如果项目需要快速搭建界面或者需要统一风格，使用UI框架可能是一个明智的选择。但对于一些小型项目或者对灵活性有较高要求的项目，可能更适合手写CSS和自定义组件。
+
+## API风格
+
+![API](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/api-style.png)
+
+### RESTful API
+
+RESTful API是一种基于REST（Representational State Transfer）架构风格的API设计规范，通过HTTP协议定义对资源的操作方式，使得客户端和服务器之间的交互建立在资源的概念上，具有统一接口、资源为中心、无状态、可缓存和分层系统等特点。
+
+> [Next with REST示例](https://github.com/vercel/next.js/tree/canary/examples/api-routes-rest)
+
+### tRPC
+
+RPC（Remote Procedure Call）是一种基于函数调用的API风格，客户端通过调用远程服务器上的函数来实现数据交互。trpc是一个基于TypeScript的全栈RPC框架，它提供了一种简单而强大的方式来定义和调用后端服务。
+
+>[Next with tRPC示例](https://github.com/trpc/examples-next-prisma-starter)
+
+### GraphQL
+
+GraphQL是一种用于API的查询语言和运行时环境，由Facebook于2012年开发。它提供了一种更高效、强类型、灵活和直观的方法来获取数据。与REST API相比，GraphQL允许客户端精确地指定请求的数据，减少了不必要的数据传输，提高了性能。
+
+>[Next with GraphQl示例](https://github.com/vercel/next.js/tree/canary/examples/api-routes-graphql)
+
+## ORM
+
+ORM(Object Relational Map)，对象-关系映射。其提供了与数据库交互的高级接口，能够帮助开发者简化对数据库的操作。
+
+![ORM](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/orm.png)
+
+例子如下(TypeORM)：
+
+```typescript:entities/student.ts
+@Entity()
+class Student {
+  @PrimaryGeneratedColumn()
+  id: number
+
+  @Col()
+  name: string
+}
+```
+
+```typescript:services/student.ts
+class UserService {
+  find() {
+    return Student.find()
+  }
+
+  async create(name: string) {
+    const stu = new Student()
+    stu.name = name
+    await stu.save()
+  }
+}
+```
+
+在ORM中，对象之间存在着一对一、一对多、多对一、多对多的关系，这些关系非常重要，可以帮助开发者更好的组织数据，实现数据的关联和查询。
+
+![ORM_RelationShip](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/orm-relationship.png)
+
+```typescript:entities/student.ts
+@Entity()
+class Student {
+  ...
+  @OneToOne()
+  profile: Profile
+
+  @OneToMany(...)
+  scores: Score[]
+
+  @ManyToMany(...)
+  @JoinTable()
+  teachers: Teacher[]
+}
+```
+
+
+Node常用的ORM如下：
+
+- [Prisma](https://www.prisma.io/)
+- [TypeORM](https://typeorm.io/)
+- [Sequelize](https://sequelize.org/)
+- [Mongoose](https://mongoosejs.com/)(MongoDB)
