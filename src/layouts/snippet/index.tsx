@@ -2,15 +2,14 @@ import { Fragment, type PropsWithChildren } from 'react'
 import type { Snippet } from 'contentlayer/generated'
 import ScrollTopBtn from '@/components/ScrollTopBtn'
 import Header from './Header'
+import Container from '@/components/Container'
 
 const PostLayout: React.FC<PropsWithChildren<Omit<Snippet, 'mdx'>>> = ({
   children,
   ...restProps
 }) => {
-  const { title } = restProps
-
   return (
-    <Fragment>
+    <Container>
       <Header {...restProps} />
       <div className="lg:grid lg:gap-8">
         <article id="post" className="prose max-w-screen-md dark:prose-invert">
@@ -19,7 +18,7 @@ const PostLayout: React.FC<PropsWithChildren<Omit<Snippet, 'mdx'>>> = ({
       </div>
 
       <ScrollTopBtn />
-    </Fragment>
+    </Container>
   )
 }
 

@@ -4,7 +4,6 @@ import cls from 'classnames'
 import Container from '@/components/Container'
 import DarkBtn from '@/components/DarkBtn'
 import { WEB_NAME } from '@/constants/config'
-import useWindowSrollYOffset from '@/hooks/useWindowSrollYOffset'
 import Navigation from './Navigation'
 
 const Logo: React.FC = () => {
@@ -25,14 +24,10 @@ const Logo: React.FC = () => {
 }
 
 const Header = () => {
-  const windowScrollYOffset = useWindowSrollYOffset(64)
-
   return (
     <header
       id="main-header"
-      className={cls('fixed w-full h-16 z-50 bg-white dark:bg-dark filter', {
-        'bg-opacity-95': !windowScrollYOffset,
-      })}
+      className={cls('fixed w-full h-16 z-50 bg-white dark:bg-dark bg-opacity-95 filter')}
     >
       <Container className="flex items-center h-full">
         <Link href="/">

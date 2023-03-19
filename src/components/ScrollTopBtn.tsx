@@ -1,5 +1,5 @@
 import cls from 'classnames'
-import { ArrowSmUpIcon } from '@heroicons/react/outline'
+import { ArrowUpIcon } from '@heroicons/react/24/outline'
 import useWindowSrollYOffset from '@/hooks/useWindowSrollYOffset'
 
 const ScrollTopBtn: React.FC = () => {
@@ -12,7 +12,7 @@ const ScrollTopBtn: React.FC = () => {
       })}
       onClick={handleScrollTop}
     >
-      <ArrowSmUpIcon className="w-5 h-5" />
+      <ArrowUpIcon className="w-5 h-5" />
     </button>
   )
 }

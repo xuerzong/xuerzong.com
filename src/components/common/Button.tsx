@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<Props>>(
           {
             'bg-primary-600 dark:bg-primary-700 text-white active:bg-primary-700 dark:active:bg-primary-800':
               type === 'primary',
-            'text-primary-600 dark:text-current bg-white dark:bg-gray-700 active:bg-primary-50 dark:active:bg-gray-800':
+            'text-primary-600 dark:text-current bg-white dark:bg-gray-900 active:bg-primary-50 dark:active:bg-gray-800':
               type === 'outlined',
           },
           className

@@ -10,6 +10,7 @@ import { sortContent, filterContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
 import type { Post } from 'contentlayer/generated'
+import Container from '@/components/Container'
 
 interface PostPageProps {
   posts: Post[]
@@ -37,13 +38,15 @@ const PostPage: NextPage<PostPageProps> = ({ posts }) => {
   return (
     <>
       <SEO title="文章" description="用心写出好的文章" />
-      <SearchInput
-        layoutClassName="mb-6"
-        className="w-full"
-        placeholder="输入文章关键字"
-        onChange={handleSearch}
-      />
-      {postsRender}
+      <Container className="p-4">
+        <SearchInput
+          layoutClassName="mb-6"
+          className="w-full"
+          placeholder="输入文章关键字"
+          onChange={handleSearch}
+        />
+        {postsRender}
+      </Container>
     </>
   )
 }

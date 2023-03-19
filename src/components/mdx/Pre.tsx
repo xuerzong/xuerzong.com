@@ -1,6 +1,6 @@
 import React, { type PropsWithChildren, useEffect, useRef, useState } from 'react'
 import cls from 'classnames'
-import { ClipboardCopyIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
+import { ClipboardDocumentIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
 
 interface CopyBtnProps {
   onClick(): void
@@ -38,9 +38,9 @@ const CopyBtn: React.FC<CopyBtnProps> = ({ className, onClick }) => {
       onClick={handleCopy}
     >
       {copiedState ? (
-        <ClipboardCheckIcon className="w-5 h-5 text-green-500" />
+        <ClipboardDocumentCheckIcon className="w-5 h-5 text-green-500" />
       ) : (
-        <ClipboardCopyIcon className="w-5 h-5" />
+        <ClipboardDocumentIcon className="w-5 h-5" />
       )}
     </button>
   )

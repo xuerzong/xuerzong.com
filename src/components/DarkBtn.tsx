@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
 enum Theme {
   Dark = 'dark',
@@ -18,16 +19,15 @@ const DarkBtn: React.FC = () => {
     }
   }, [isMounted])
 
+  if (!isMounted) return null
+
   return (
-    <button className="relative z-40 md:z-0" aria-label="theme-btn">
-      {isMounted && (
-        <div
-          className="text-lg w-6 h-6 text-current leading-6"
-          onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}
-        >
-          {isDarkTheme ? '🌛' : '🌞'}
-        </div>
-      )}
+    <button
+      className="relative z-40 md:z-0 p-2 bg-gray-200 dark:bg-gray-800 rounded"
+      aria-label="theme-btn"
+      onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}
+    >
+      {isDarkTheme ? <MoonIcon className="w-6 h-6" /> : <SunIcon className="w-6 h-6" />}
     </button>
   )
 }

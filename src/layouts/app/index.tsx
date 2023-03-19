@@ -31,9 +31,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <meta name="robots" content="index, follow" />
       </Head>
       <Header />
-      <main className="pt-16">
-        <Container className="p-4">{children}</Container>
-      </main>
+      <main className="pt-16">{children}</main>
       <Footer />
     </>
   )

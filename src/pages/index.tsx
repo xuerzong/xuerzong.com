@@ -27,7 +27,7 @@ const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => {
         ))}
         <div className="text-center mt-6">
           <Link href="/posts">
-            <Button className="rounded-3xl">
+            <Button>
               全部文章
               <ArrowNarrowRight className="icon" size={16} color="currentColor" />
             </Button>

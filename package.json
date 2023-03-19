@@ -1,6 +1,6 @@
 {
   "name": "xuerzong.com",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "xuerzong <xuerzong@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -19,7 +19,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.16",
     "axios": "^1.1.2",
     "classnames": "^2.3.1",
     "contentlayer": "^0.2.5",
@@ -45,7 +45,7 @@
     "rehype-prism-plus": "^1.4.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
-    "sharp": "^0.31.3",
+    "sharp": "0.31.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tabler-icons-react": "^1.54.0",
     "unified": "^10.1.2",

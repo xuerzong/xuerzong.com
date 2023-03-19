@@ -1,4 +1,5 @@
 import { type PropsWithChildren } from 'react'
+import Container from './Container'
 
 interface SectionProps {
   title: string
@@ -6,7 +7,7 @@ interface SectionProps {
 
 const Section: React.FC<PropsWithChildren<SectionProps>> = ({ title, children }) => {
   return (
-    <section>
+    <Container className="mb-6">
       <h2
         id={`section-${title}`}
         className="py-6 my-6 border-b text-3xl font-bold dark:border-gray-500"
@@ -14,7 +15,7 @@ const Section: React.FC<PropsWithChildren<SectionProps>> = ({ title, children })
         {title}
       </h2>
       <div>{children}</div>
-    </section>
+    </Container>
   )
 }
 
