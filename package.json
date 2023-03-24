@@ -45,7 +45,7 @@
     "rehype-prism-plus": "^1.4.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
-    "sharp": "0.31.0",
+    "sharp": "0.32.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tabler-icons-react": "^1.54.0",
     "unified": "^10.1.2",
