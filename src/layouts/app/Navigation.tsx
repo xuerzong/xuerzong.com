@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cls from 'classnames'
-import { HomeIcon, DocumentTextIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  DocumentTextIcon,
+  CodeBracketIcon,
+  DocumentMinusIcon,
+} from '@heroicons/react/24/outline'
 import { BiMenu } from 'react-icons/bi'
 import { IoMdClose } from 'react-icons/io'
 
@@ -16,6 +21,11 @@ const navigations = [
     icon: <DocumentTextIcon className="w-5 h-5" />,
     title: '博客',
     path: '/posts',
+  },
+  {
+    icon: <DocumentMinusIcon className="w-5 h-5" />,
+    title: '文档',
+    path: '/docs',
   },
   {
     icon: <CodeBracketIcon className="w-5 h-5" />,
