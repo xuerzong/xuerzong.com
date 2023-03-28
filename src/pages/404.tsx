@@ -1,21 +1,23 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import SEO from '@/components/SEO'
+import Container from '@/components/Container'
+import Button from '@/components/common/Button'
 
 const NotFoundPage = () => {
   return (
     <>
       <SEO title="404" description="页面找不到啦" />
-      <div className="text-center">
+      <Container className="flex flex-col items-center justify-content">
         <Image src="/static/assets/404.svg" width={404} height={404} alt="404" />
         <div className="my-16">
           <Link href="/">
-            <button className="px-4 py-2 text-sm bg-primary-500 text-gray-50 hover:bg-primary-600">
+            <Button type="primary">
               回到首页
-            </button>
+            </Button>
           </Link>
         </div>
-      </div>
+      </Container>
     </>
   )
 }
