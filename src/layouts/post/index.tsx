@@ -8,14 +8,12 @@ const PostLayout: React.FC<PropsWithChildren<Omit<Post, 'mdx'>>> = ({ children, 
   const { title, date, readingTime } = restProps
 
   return (
-    <Container>
+    <Container className="">
       <PostHeader title={title} date={date} readingTime={readingTime} />
 
-      <div className="lg:grid lg:gap-8">
-        <article id="post" className="prose max-w-none dark:prose-invert mx-auto">
-          {children}
-        </article>
-      </div>
+      <article id="post" className="prose max-w-none dark:prose-invert mx-auto my-6">
+        {children}
+      </article>
 
       <ScrollTopBtn />
     </Container>
