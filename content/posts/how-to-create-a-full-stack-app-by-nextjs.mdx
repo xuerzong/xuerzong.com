@@ -8,12 +8,14 @@ tags:
   - 前端总结
   - Next.js
   - 全栈
-date: '2023-03-03'
+date: '2023-02-08'
 ---
 
-Next.js是一个基于React的全栈应用程序开发框架，它可以帮助开发人员快速创建高性能的Web应用程序。
+> 编程就像摄影📷一样，决定成片质量的不是你的器材，而是你的想法
 
-使用Next.js，可以轻松地构建一个完整的应用程序，包括前端和后端。
+Next.js是一个基于React的全栈应用程序开发框架，它可以帮助开发人员轻松地构建一个完整的应用程序，包括前端和后端。
+
+这篇文章就带大家**简单**了解一下如何使用Next.js去构建全栈App。
 
 ![hero](/static/assets/images/how-to-create-a-full-stack-app-by-nextjs/hero.png)
 
@@ -159,3 +161,20 @@ Node常用的ORM如下：
 - [TypeORM](https://typeorm.io/)
 - [Sequelize](https://sequelize.org/)
 - [Mongoose](https://mongoosejs.com/)(MongoDB)
+
+
+我们该如何选择呢？
+
+对比上面几个ORM，Prisma的风格更接近**函数式编程**，而其他ORM更偏向于**面向对象编程**，并且在Typescript项目中使用装饰器的话，需要做更多的配置操作。
+
+所以对于Next.js来说，其实使用Prisma更为契合。
+
+## 结合
+
+综上所述，强烈推荐大家使用 `Next.js + Prisma + PostgreSQL / MySQL` 的技术栈去实现自己的全栈App，当然，其中的前端样式方案可以根据自己的喜好去选择。
+
+这里推荐几个使用上述技术栈实现的项目，可以借鉴学习一下。
+
+- [umami](https://umami.is/) 一个可自定义部署的、轻量级的Google Analytics
+
+- [typebot.io](https://typebot.io/) 一个很有趣的聊天框App
