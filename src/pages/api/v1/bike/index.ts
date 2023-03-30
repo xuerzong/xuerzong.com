@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import moment from '@/utils/moment'
+import { ok } from 'np-nt'
 
 export default (_: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({
+  return ok(res, {
     top_single: 124.53,
     total: 3491.04,
     top_speed: 55,
