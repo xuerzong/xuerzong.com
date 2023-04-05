@@ -5,12 +5,12 @@ import SEO from '@/components/SEO'
 import PostCard from '@/components/PostCard'
 import SearchInput from '@/components/SearchInput'
 import Empty from '@/components/Empty'
+import Container from '@/components/Container'
 import { debounce } from '@/utils/lodash'
 import { sortContent, filterContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
 import type { Post } from 'contentlayer/generated'
-import Container from '@/components/Container'
 
 interface PostPageProps {
   posts: Post[]

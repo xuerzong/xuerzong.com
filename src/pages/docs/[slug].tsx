@@ -1,27 +1,32 @@
-import Container from '@/components/Container'
-import DocLayout from '@/layouts/doc'
 import { allDocs, type Doc } from 'contentlayer/generated'
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import type { Nav } from '@/types/common'
+import type { GetStaticPaths, NextPage } from 'next'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import SEO from '@/components/SEO'
+import DocLayout from '@/layouts/doc'
+import MDXComponents from '@/components/mdx'
+import type { SideRoute } from '@/types/routes'
 
 interface Props {
   doc: Doc
-  navs: Record<string, Nav[]>
+  routes: SideRoute[]
 }
 
-const Page: NextPage<Props> = ({ doc, navs }) => {
+const Page: NextPage<Props> = ({ doc, routes }) => {
+  const Component = useMDXComponent(doc.body.code)
   return (
     <>
-      <DocLayout navs={navs}>{doc.title}</DocLayout>
+      <SEO title="文档" />
+      <DocLayout routes={routes}>
+        <h1 className="text-3xl font-medium pb-6 border-b">{doc.title}</h1>
+        <article className="prose max-w-none dark:prose-invert mx-auto my-6">
+          <Component components={MDXComponents} />
+        </article>
+      </DocLayout>
     </>
   )
 }
 
 export default Page
-
-interface Params {
-  slug: string
-}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const docs = allDocs.sort((a, b) => a.order - b.order)
@@ -32,24 +37,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params as unknown as Params
-  const allDocsNav = allDocs.reduce((pre, cur) => {
-    if (!pre[cur.category]) {
-      pre[cur.category] = []
-    }
-    pre[cur.category].push({
-      title: cur.title,
-      slug: cur.slug,
-      order: cur.order,
-      active: cur.slug === slug,
-    })
-    return pre
-  }, {})
-  return {
-    props: {
-      doc: allDocs.find((d) => d.slug === slug),
-      navs: allDocsNav,
-    },
-  }
-}
+export { getStaticProps } from '../docs'

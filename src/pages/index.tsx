@@ -1,12 +1,6 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
-import { ArrowNarrowRight } from 'tabler-icons-react'
-
-import Button from '@/components/common/Button'
 import SEO from '@/components/SEO'
 import Hero from '@/components/Hero'
-import Section from '@/components/Section'
-import PostCard from '@/components/PostCard'
 import { filterContent, sortContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
@@ -21,19 +15,6 @@ const IndexPage: NextPage<IndexPageProps, unknown> = ({ posts }) => {
     <>
       <SEO title="首页" description="脚踏实地，厚积薄发" />
       <Hero />
-      <Section title="最近文章">
-        {posts.map((item) => (
-          <PostCard key={item.title} {...item} />
-        ))}
-        <div className="text-center mt-6">
-          <Link href="/posts">
-            <Button>
-              全部文章
-              <ArrowNarrowRight className="icon" size={16} color="currentColor" />
-            </Button>
-          </Link>
-        </div>
-      </Section>
     </>
   )
 }

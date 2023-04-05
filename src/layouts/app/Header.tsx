@@ -27,9 +27,9 @@ const Header = () => {
   return (
     <header
       id="main-header"
-      className={cls('fixed w-full h-16 z-50 bg-white dark:bg-dark bg-opacity-95 filter')}
+      className={cls('fixed w-full h-16 z-50 bg-white dark:bg-gray-900 bg-opacity-95 filter')}
     >
-      <Container className="flex items-center h-full">
+      <Container size="2xl" className="flex items-center h-full">
         <Link href="/">
           <div className="inline-flex items-center select-none cursor-pointer">
             <span className="inline-block w-6 h-[14px]">

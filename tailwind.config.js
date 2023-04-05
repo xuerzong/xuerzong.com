@@ -14,6 +14,12 @@ module.exports = {
         sans: ['Noto Sans SC', ...defaultTheme.fontFamily.sans],
         mono: ['Recursive', ...defaultTheme.fontFamily.mono],
       },
+
+      gridTemplateColumns: {
+        'only-content': 'auto',
+        'sidebar-content': '20rem auto',
+        'sidebar-content-toc': '20rem auto 20rem',
+      },
     },
   },
 

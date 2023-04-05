@@ -1,0 +1,47 @@
+---
+title: 使用surger部署项目
+order: 2
+---
+
+对于我自己来说，部署前端首选[vercel](https://vercel.com/)（几年前还叫做**now**）,但是最近辅导一位同学完成前端项目，项目要求必须使用[surge](https://surge.sh)进行部署预览。看了看这还是一个不错的部署平台，只是提供的链接没有`SLL`证书。
+
+因为[surge](https://surge.sh)部署的是静态文件，所以部署起来还是很快的。下面就以[React](https://reactjs.org/)为例子来描述一下打包流程。
+
+## 安装surge
+```bash
+npm install surge -g
+```
+
+## 打包项目
+执行以下命令之后根目录下会生成`dist`文件夹，当然，根据用户自定义设置可以是`public`或者`out`等等。
+```bash
+yarn build
+# npm run build
+```
+## 部署项目
+
+```bash
+cd dist # cd out or cd public
+
+surge
+```
+然后就会输出以下内容，大致意思就是`email`和`password`随便填写，存在用户直接登录，不存在用户直接注册。
+```bash
+Welcome to surge! (surge.sh)
+
+   Login (or create surge account) by entering email & password.
+
+       email: your email
+
+       password:
+```
+登录完成后会让你选择路径（默认当前路径）与域名，这俩默认就好，如果需要自定义修改一下就行。当终端输出：
+```bash
+Success! - Published to your-domain
+```
+Bingo! 访问链接就能行了～
+
+## 总结
+
+其实[surge](https://surge.sh)的部署过程和[vercel](https://vercel.com/)相似，差别就是一个是打包之后上传，一个是上传之后打包。
+

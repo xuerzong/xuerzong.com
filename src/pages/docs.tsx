@@ -1,38 +1,52 @@
 import type { GetStaticProps, NextPage } from 'next'
-import SEO from '@/components/SEO'
 
-import { allDocs, type Doc } from 'contentlayer/generated'
-import Container from '@/components/Container'
+import { allDocs } from 'contentlayer/generated'
+import cloneDeep from 'clone-deep'
+
 import DocLayout from '@/layouts/doc'
-import { Navs } from '@/types/common'
+import SEO from '@/components/SEO'
+import { SideRoute } from '@/types/routes'
+import { docRoutes } from '@/constants/routes'
 
 interface Props {
-  docs: Doc[]
-  navs: Navs
+  routes: SideRoute[]
 }
 
-const Page: NextPage<Props> = ({ docs, navs }) => {
+const Page: NextPage<Props> = ({ routes }) => {
   return (
     <>
       <SEO title="代码" description="不积跬步何以至千里" />
-      <DocLayout navs={navs}>324</DocLayout>
+      <DocLayout routes={routes}>324</DocLayout>
     </>
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const docs = allDocs.sort((a, b) => a.order - b.order)
+interface Params {
+  slug: string
+}
 
-  const navs = allDocs.reduce((pre, cur) => {
-    if (!pre[cur.category]) {
-      pre[cur.category] = []
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = ((params as unknown) || {}) as Params
+
+  const routes = allDocs.reduce((pre, { slug, category, title }) => {
+    const currentRouteIndex = pre.findIndex((r) => r.key === category)
+
+    if (!Array.isArray(pre[currentRouteIndex].routes)) {
+      pre[currentRouteIndex].routes = []
     }
-    pre[cur.category].push({ title: cur.title, slug: cur.slug, order: cur.order, active: false })
+    pre[currentRouteIndex].routes.push({
+      key: slug,
+      slug,
+      title,
+    })
     return pre
-  }, {} as Navs)
+  }, cloneDeep(docRoutes))
 
   return {
-    props: { docs, navs },
+    props: {
+      doc: allDocs.find((d) => d.slug === slug) || {},
+      routes,
+    },
   }
 }
 

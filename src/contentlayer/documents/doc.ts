@@ -39,7 +39,6 @@ export const Doc = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    category: { type: 'string', required: true },
     order: { type: 'number', required: true },
   },
   computedFields: {
@@ -47,6 +46,10 @@ export const Doc = defineDocumentType(() => ({
     slug: {
       type: 'string',
       resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    },
+    category: {
+      type: 'string',
+      resolve: ({ _raw: { sourceFileDir } }) => sourceFileDir.replace('docs/', ''),
     },
     headings: {
       type: 'json',

@@ -6,7 +6,10 @@ import { WEB_NAME, GITHUB, TWITTER } from '@/constants/config'
 
 const Footer = () => (
   <footer>
-    <Container className="flex flex-col-reverse items-center md:flex-row justify-between border-t py-8 px-4 md:px-0 text-sm uppercase">
+    <Container
+      size="2xl"
+      className="flex flex-col-reverse items-center md:flex-row justify-between border-t py-8 px-4 text-sm uppercase"
+    >
       <div>
         Copyright © 2019 - {moment().year()} {WEB_NAME}
       </div>
