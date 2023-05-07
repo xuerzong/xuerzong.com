@@ -8,7 +8,7 @@ const PostLayout: React.FC<PropsWithChildren<Omit<Post, 'mdx'>>> = ({ children, 
   const { title, date, readingTime } = restProps
 
   return (
-    <Container className="">
+    <Container className="pt-24">
       <PostHeader title={title} date={date} readingTime={readingTime} />
 
       <article id="post" className="prose max-w-none dark:prose-invert mx-auto my-6">

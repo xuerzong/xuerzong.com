@@ -25,11 +25,8 @@ const Logo: React.FC = () => {
 
 const Header = () => {
   return (
-    <header
-      id="main-header"
-      className={cls('fixed w-full h-16 z-50 bg-white dark:bg-dark bg-opacity-95 filter')}
-    >
-      <Container className="flex items-center h-full">
+    <header className={cls('absolute w-full h-16 z-50 bg-transparent')}>
+      <Container size="2xl" className="flex items-center h-full">
         <Link href="/">
           <div className="inline-flex items-center select-none cursor-pointer">
             <span className="inline-block w-6 h-[14px]">

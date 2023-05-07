@@ -1,8 +1,6 @@
 import React, { ReactNode, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
-import Container from '@/components/Container'
 import { KEYWORD_LIST } from '@/constants/config'
 import Header from './Header'
 import Footer from './Footer'
@@ -31,7 +29,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <meta name="robots" content="index, follow" />
       </Head>
       <Header />
-      <main className="pt-16">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   )

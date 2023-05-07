@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import moment from '@/utils/moment'
 import { ok } from 'np-nt'
+import moment from '@/utils/moment'
 
 export default (_: NextApiRequest, res: NextApiResponse) => {
   return ok(res, {

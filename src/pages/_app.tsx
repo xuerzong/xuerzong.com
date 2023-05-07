@@ -5,8 +5,9 @@ import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
 import type { ThemeProviderProps } from 'next-themes/dist/types'
 import AppLayout from '@/layouts/app'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-import 'nprogress/nprogress.css'
+import '@/styles/nprogress.css'
 import '@/styles/tailwind.css'
 import '@/styles/prism.css'
 import '@/styles/global.css'
@@ -35,11 +36,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [])
 
   return (
-    <ThemeProvider {...themeProviderProps}>
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
-    </ThemeProvider>
+    <>
+      <GoogleAnalytics />
+      <ThemeProvider {...themeProviderProps}>
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </ThemeProvider>
+    </>
   )
 }
 
