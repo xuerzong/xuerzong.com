@@ -8,18 +8,9 @@ enum Theme {
 }
 
 const DarkBtn: React.FC = () => {
-  const [isMounted, setIsMounted] = useState<boolean>(false)
   const { theme, resolvedTheme, setTheme } = useTheme()
 
   const isDarkTheme = theme === Theme.Dark || resolvedTheme === Theme.Dark
-
-  useEffect(() => {
-    if (!isMounted) {
-      setIsMounted(true)
-    }
-  }, [isMounted])
-
-  if (!isMounted) return null
 
   return (
     <button

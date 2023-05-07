@@ -1,15 +1,17 @@
 import cls from 'classnames'
-import { type PropsWithChildren } from 'react'
+import { type CSSProperties, type PropsWithChildren } from 'react'
 
 interface ContainerProps {
   size?: 'md' | 'lg' | 'xl' | '2xl'
   className?: string
+  style?: CSSProperties
 }
 
 const Container: React.FC<PropsWithChildren<ContainerProps>> = ({
   children,
   className,
   size = 'md',
+  ...restProps
 }) => (
   <div
     className={cls(
@@ -22,6 +24,7 @@ const Container: React.FC<PropsWithChildren<ContainerProps>> = ({
       },
       className
     )}
+    {...restProps}
   >
     {children}
   </div>

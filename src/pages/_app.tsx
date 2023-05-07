@@ -7,7 +7,7 @@ import type { ThemeProviderProps } from 'next-themes/dist/types'
 import AppLayout from '@/layouts/app'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-import 'nprogress/nprogress.css'
+import '@/styles/nprogress.css'
 import '@/styles/tailwind.css'
 import '@/styles/prism.css'
 import '@/styles/global.css'

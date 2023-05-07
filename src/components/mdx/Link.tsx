@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
 
 const Link: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, ...restProps }) => {
@@ -6,9 +7,9 @@ const Link: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, ...rest
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...restProps} />
-      </Link>
+      <NextLink href={href}>
+        <span {...restProps} />
+      </NextLink>
     )
   }
   if (isAnchorLink) {

@@ -7,6 +7,7 @@ import {
   DocumentTextIcon,
   CodeBracketIcon,
   DocumentMinusIcon,
+  CursorArrowRippleIcon,
 } from '@heroicons/react/24/outline'
 import { BiMenu } from 'react-icons/bi'
 import { IoMdClose } from 'react-icons/io'
@@ -23,9 +24,9 @@ const navigations = [
     path: '/posts',
   },
   {
-    icon: <DocumentMinusIcon className="w-5 h-5" />,
-    title: '文档',
-    path: '/docs',
+    icon: <CursorArrowRippleIcon className="w-5 h-5" />,
+    title: '联系我',
+    path: '/contact',
   },
 ]
 
@@ -63,7 +64,7 @@ const Navigation: React.FC = () => {
               <div
                 onClick={handleTriggerOpen.bind(null, false)}
                 className={cls('inline-flex items-center pl-2 pr-3 py-1 space-x-1 rounded', {
-                  'text-gray-100 bg-primary-700 ring-2 ring-offset-2 ring-offset-white dark:ring-offset-dark ring-primary-600':
+                  'text-primary-600 dark:text-primary-500 font-bold':
                     item.path === '/' ? item.path === pathname : pathname.startsWith(item.path),
                 })}
               >

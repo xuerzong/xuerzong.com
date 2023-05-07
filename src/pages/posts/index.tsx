@@ -6,17 +6,18 @@ import PostCard from '@/components/PostCard'
 import SearchInput from '@/components/SearchInput'
 import Empty from '@/components/Empty'
 import Container from '@/components/Container'
+import Hero from '@/components/Hero'
 import { debounce } from '@/utils/lodash'
 import { sortContent, filterContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
 import type { Post } from 'contentlayer/generated'
 
-interface PostPageProps {
+interface Props {
   posts: Post[]
 }
 
-const PostPage: NextPage<PostPageProps> = ({ posts }) => {
+const PostPage: NextPage<Props> = ({ posts }) => {
   const [searchKeyword, setSearchKeyword] = useState('')
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,10 +38,18 @@ const PostPage: NextPage<PostPageProps> = ({ posts }) => {
 
   return (
     <>
-      <SEO title="文章" description="用心写出好的文章" />
-      <Container className="p-4">
+      <SEO
+        title="博客"
+        description="通过我的博客，你可以了解到我的编程心得、生活感悟和一些有趣的事情。"
+      />
+      <Hero
+        title="博客"
+        description="通过我的博客，你可以了解到我的编程心得、生活感悟和一些有趣的事情。"
+        className="pt-24"
+      />
+      <Container className="p-4 pt-12">
         <SearchInput
-          layoutClassName="mb-6"
+          layoutClassName="mb-8"
           className="w-full"
           placeholder="输入文章关键字"
           onChange={handleSearch}
