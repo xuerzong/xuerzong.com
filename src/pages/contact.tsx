@@ -12,14 +12,14 @@ const Page = ({ title, description, body }: PageProps) => {
     <>
       <SEO title={title} description={description} />
       <Hero title={title} description={description} />
-      <Container size="lg" className="prose max-w-none dark:prose-invert px-4 py-8">
+      <Container size="lg" className="prose dark:prose-invert px-4 py-8">
         <Component components={MDXComponents} />
       </Container>
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetServerSideProps = async () => {
   return { props: allPages.find((page) => page.path === '/contact') }
 }
 

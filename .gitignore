@@ -111,3 +111,6 @@ yarn.lock
 
 # Contentlayer
 .contentlayer
+
+public/robots.txt
+public/sitemap*.xml
