@@ -8,7 +8,7 @@ const useWindowSrollYOffset = (offset = defaultOffset, deps?: DependencyList) =>
 
   useWindowScroll(() => {
     setIs(window.scrollY < offset)
-  }, deps || [])
+  })
 
   return is
 }

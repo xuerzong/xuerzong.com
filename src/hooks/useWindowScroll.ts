@@ -1,17 +1,18 @@
-import throttle from 'lodash.throttle'
-import { DependencyList, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useThrottledCallback } from 'use-debounce'
 import smoothscroll from 'smoothscroll-polyfill'
 
-const useWindowScroll = (callback: () => void, deps?: DependencyList) => {
+const useWindowScroll = (callback: () => void) => {
+  const throttleCallback = useThrottledCallback(callback, 200)
+
   useEffect(() => {
     smoothscroll.polyfill()
-    const throttleCallback = throttle(callback, 200)
     throttleCallback()
     window.addEventListener('scroll', throttleCallback)
     return () => {
       window.removeEventListener('scroll', throttleCallback)
     }
-  }, deps)
+  }, [throttleCallback])
 }
 
 export default useWindowScroll

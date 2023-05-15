@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
-import MaskBackground from './extends/MaskBackground'
-import Container from './Container'
+import MaskBackground from './MaskBackground'
+import Container from '../Container'
 
 interface Props {
   title?: React.ReactNode

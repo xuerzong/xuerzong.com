@@ -1,6 +1,6 @@
-import { type GetServerSideProps } from 'next'
+import type { GetStaticPaths, GetServerSideProps } from 'next'
 import { allPages, type Page as PageProps } from 'contentlayer/generated'
-import Hero from '@/components/Hero'
+import Hero from '@/components/extends/Hero'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import MDXComponents from '@/components/mdx'
 import Container from '@/components/Container'
@@ -19,8 +19,21 @@ const Page = ({ title, description, body }: PageProps) => {
   )
 }
 
-export const getStaticProps: GetServerSideProps = async () => {
-  return { props: allPages.find((page) => page.path === '/contact') }
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: allPages.map((page) => ({ params: { path: page.path.split('/').filter(Boolean) } })),
+    fallback: false,
+  }
+}
+
+type Params = {
+  path: string[]
+}
+
+export const getStaticProps: GetServerSideProps = async ({ params }) => {
+  const currentPath = (params as Params).path.join('/')
+
+  return { props: allPages.find((page) => page.path === `/${currentPath}`) }
 }
 
 export default Page

@@ -1,22 +1,4 @@
-import type { FooterRoute, SideRoute } from '@/types/routes'
-
-export const docRoutes: SideRoute[] = [
-  {
-    key: 'application',
-    title: '应用',
-    routes: [],
-  },
-  {
-    key: 'algorithm',
-    title: '算法',
-    routes: [],
-  },
-  {
-    key: 'source-code',
-    title: '源码',
-    routes: [],
-  },
-]
+import type { FooterRoute } from '@/types/routes'
 
 export const footerRoutes: FooterRoute[] = [
   {
@@ -56,20 +38,4 @@ export const footerRoutes: FooterRoute[] = [
       },
     ],
   },
-  // {
-  //   key: 'links',
-  //   title: '友情链接',
-  //   routes: [
-  //     {
-  //       key: 'github',
-  //       title: 'Github',
-  //       path: 'https://github.com/xuerzong'
-  //     },
-  //     {
-  //       key: 'twitter',
-  //       title: 'Twitter',
-  //       path: 'https://twitter.com/xuerzong'
-  //     }
-  //   ]
-  // }
 ]

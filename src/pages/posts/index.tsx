@@ -1,13 +1,13 @@
-import { ChangeEventHandler, useCallback, useState } from 'react'
+import { ChangeEventHandler, useState } from 'react'
 import type { NextPage } from 'next'
+import { useDebouncedCallback } from 'use-debounce'
 
 import SEO from '@/components/SEO'
 import PostCard from '@/components/PostCard'
 import SearchInput from '@/components/SearchInput'
 import Empty from '@/components/Empty'
 import Container from '@/components/Container'
-import Hero from '@/components/Hero'
-import { debounce } from '@/utils/lodash'
+import Hero from '@/components/extends/Hero'
 import { sortContent, filterContent } from '@/utils/contentlayer'
 
 import { allPosts } from 'contentlayer/generated'
@@ -20,13 +20,9 @@ interface Props {
 const PostPage: NextPage<Props> = ({ posts }) => {
   const [searchKeyword, setSearchKeyword] = useState('')
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleSearch: ChangeEventHandler<HTMLInputElement> = useCallback(
-    debounce((e) => {
-      setSearchKeyword(e.target.value)
-    }),
-    [setSearchKeyword]
-  )
+  const handleSearch: ChangeEventHandler<HTMLInputElement> = useDebouncedCallback((e) => {
+    setSearchKeyword(e.target.value)
+  }, 300)
 
   const filteredPosts = posts.filter((item) => item.title.includes(searchKeyword))
 

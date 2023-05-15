@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
 import type { ThemeProviderProps } from 'next-themes/dist/types'
 import AppLayout from '@/layouts/app'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
+import GoogleAnalytics from '@/components/extends/GoogleAnalytics'
 
 import '@/styles/nprogress.css'
 import '@/styles/tailwind.css'
