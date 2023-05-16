@@ -4,9 +4,6 @@ export interface RootRoute {
   key: Key
   title: string
 }
-export interface SideRoute extends RootRoute {
-  routes: Route[]
-}
 
 export interface Route extends RootRoute {
   slug: string

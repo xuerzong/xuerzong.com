@@ -1,30 +1,24 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cls from 'classnames'
-import {
-  HomeIcon,
-  DocumentTextIcon,
-  CodeBracketIcon,
-  DocumentMinusIcon,
-  CursorArrowRippleIcon,
-} from '@heroicons/react/24/outline'
+import { HomeIcon, DocumentTextIcon, CursorArrowRippleIcon } from '@heroicons/react/24/outline'
 import { BiMenu } from 'react-icons/bi'
 import { IoMdClose } from 'react-icons/io'
 
 const navigations = [
   {
-    icon: <HomeIcon className="w-5 h-5" />,
+    icon: HomeIcon,
     title: '首页',
     path: '/',
   },
   {
-    icon: <DocumentTextIcon className="w-5 h-5" />,
+    icon: DocumentTextIcon,
     title: '博客',
     path: '/posts',
   },
   {
-    icon: <CursorArrowRippleIcon className="w-5 h-5" />,
+    icon: CursorArrowRippleIcon,
     title: '联系我',
     path: '/contact',
   },
@@ -68,7 +62,9 @@ const Navigation: React.FC = () => {
                     item.path === '/' ? item.path === pathname : pathname.startsWith(item.path),
                 })}
               >
-                {item.icon}
+                {React.createElement(item.icon, {
+                  className: 'w-5 h-5',
+                })}
                 <span>{item.title}</span>
               </div>
             </Link>
