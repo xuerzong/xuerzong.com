@@ -23,7 +23,8 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:db-pull": "prisma db pull",
     "prisma:db-push": "prisma db push",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
