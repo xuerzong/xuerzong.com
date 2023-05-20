@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cls from 'classnames'
-import { HomeIcon, DocumentTextIcon, CursorArrowRippleIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  DocumentTextIcon,
+  CursorArrowRippleIcon,
+  ClipboardIcon,
+} from '@heroicons/react/24/outline'
 import { BiMenu } from 'react-icons/bi'
 import { IoMdClose } from 'react-icons/io'
 
@@ -16,6 +21,11 @@ const navigations = [
     icon: DocumentTextIcon,
     title: '博客',
     path: '/posts',
+  },
+  {
+    icon: ClipboardIcon,
+    title: '留言板',
+    path: '/guestbook',
   },
   {
     icon: CursorArrowRippleIcon,

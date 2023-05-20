@@ -12,7 +12,7 @@ const NotFoundPage = () => {
         <Image src="/static/assets/404.svg" width={404} height={404} alt="404" />
         <div className="my-16">
           <Link href="/">
-            <Button type="primary">回到首页</Button>
+            <Button variant="primary">回到首页</Button>
           </Link>
         </div>
       </Container>

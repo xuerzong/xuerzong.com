@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Router from 'next/router'
 import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
+import { SessionProvider } from 'next-auth/react'
 import type { ThemeProviderProps } from 'next-themes/dist/types'
 import AppLayout from '@/layouts/app'
 import GoogleAnalytics from '@/components/extends/GoogleAnalytics'
@@ -19,7 +20,7 @@ const themeProviderProps: ThemeProviderProps = {
   enableSystem: true,
 }
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   useEffect(() => {
     const handleRouteStart = () => NProgress.start()
     const handleRouteDone = () => NProgress.done()
@@ -39,9 +40,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <GoogleAnalytics />
       <ThemeProvider {...themeProviderProps}>
-        <AppLayout>
-          <Component {...pageProps} />
-        </AppLayout>
+        <SessionProvider session={session}>
+          <AppLayout>
+            <Component {...pageProps} />
+          </AppLayout>
+        </SessionProvider>
       </ThemeProvider>
     </>
   )

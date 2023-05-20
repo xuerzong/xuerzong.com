@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
 
         <motion.div className="space-x-6" {...animation} transition={{ delay: 0.3 }}>
           <Link href="/contact">
-            <Button className="tracking-widest" type="primary">
+            <Button className="tracking-widest" variant="primary">
               与我联系
             </Button>
           </Link>
