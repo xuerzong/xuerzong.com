@@ -13,10 +13,6 @@ const GuestInput: React.FC = () => {
   const session = useSession()
   const { mutate: refresh } = useGuestbook()
 
-  useEffect(() => {
-    toast.error('测试测试')
-  }, [])
-
   const handleSubmit = async () => {
     if (!content || content.length > 1024) {
       return ''
@@ -27,7 +23,7 @@ const GuestInput: React.FC = () => {
       if (!ok) throw new Error('')
       toast.success('成功留下了您的足迹～')
     } catch {
-      toast.error('发生位置错误')
+      toast.error('发生未知错误')
     } finally {
       setLoading(false)
       setContent('')
