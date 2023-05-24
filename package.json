@@ -60,7 +60,7 @@
     "remark-gfm": "^3.0.1",
     "sharp": "0.31.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "sonner": "^0.3.5",
+    "sonner": "^0.4.0",
     "swr": "^2.1.5",
     "tabler-icons-react": "^1.54.0",
     "tailwind-merge": "^1.12.0",
