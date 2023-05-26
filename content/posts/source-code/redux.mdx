@@ -1,0 +1,48 @@
+---
+title: 源码系列-Redux
+description: 你好
+category: 源码
+tags:
+  - 前端
+  - redux
+date: '2022-06-01'
+---
+
+## redux的基本使用
+
+```js
+import { createStore } from 'redux'
+
+function counterReducer(state = { value: 0 }, action) {
+  switch (action.type) {
+    case 'counter/incremented':
+      return { value: state.value + 1 }
+    case 'counter/decremented':
+      return { value: state.value - 1 }
+    default:
+      return state
+  }
+}
+
+let store = createStore(counterReducer)
+
+store.subscribe(() => console.log(store.getState()))
+
+store.dispatch({ type: 'counter/incremented' })
+// { value: 1 }
+store.dispatch({ type: 'counter/incremented' })
+// { value: 2 }
+store.dispatch({ type: 'counter/incremented' })
+// { value: 1 }
+```
+
+1. 创建一个 reducer 其中包括 `counter/incremented` 与 `counter/decremented`
+2. 创建一个 store
+3. 给store附上监听事件（打印`store.getState()`）
+4. 分别触发 type 为 `counter/incremented` 和 `counter/decremented` 的 `action`
+
+可以看到，其实上述操作主要围绕store进行，所以我们可以从store入手，看到
+
+```
+
+```
