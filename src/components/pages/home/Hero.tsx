@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     <MaskBackground>
       <Container
         size="lg"
-        className="relative flex flex-col justify-center overflow-x-hidden min-h-screen"
+        className="relative flex flex-col justify-center py-64 overflow-x-hidden"
       >
         <motion.h2
           className="text-5xl md:text-7xl mb-10"
