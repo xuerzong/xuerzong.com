@@ -8,6 +8,6 @@ const MDXComponents = {
   pre: Pre,
   Image,
   BikeData,
-}
+} as any
 
 export default MDXComponents
