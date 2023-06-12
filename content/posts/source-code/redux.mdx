@@ -43,6 +43,73 @@ store.dispatch({ type: 'counter/incremented' })
 
 可以看到，其实上述操作主要围绕store进行，所以我们可以从store入手，看到
 
+```typescript
+export function createStore(reducer, preloadedState, ehancer ) {
+  let currentReducer = reducer
+  let currentState = preloadedState
+  let currentListeners = new Map()
+  let nextListener = currentListeners
+  let listenerIdCounter = 0
+  let isDispatching = false
+
+  function ensureCanMutateNextListeners() {
+    // ...
+  }
+
+  function getState() {
+    // ...
+  }
+
+  function subscribe(listener) {
+    // ...
+  }
+
+  function dispatch(action) {
+    // ...
+  }
+}
 ```
 
+
+## getState
+
+`getState`
+
+```typescript
+function getState() {
+  return currentState
+}
 ```
+
+
+
+## subscribe
+
+```typescript
+let listenerIdCounter = 0
+function subscribe(listener: () => void) {
+  const listenerId = listenerIdCounter++
+  nextListener.set(listenerId, listener)
+
+  return function unsubscribe() {
+    nextListener.delete(listenerId)
+  }
+}
+```
+
+## dispatch
+
+```typescript
+let currentReducer = reducer
+function dispatch(action) {
+  currentState = currentReducer(action)
+  const listeners = (currentListeners = nextListeners)
+  listeners.forEach(listener => {
+    listener()
+  })
+  return action
+}
+```
+
+- 将传入的 action 传入 reducer
+- 将当前 state 设置为 reducer 返回的 state
