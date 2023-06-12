@@ -39,6 +39,14 @@ module.exports = {
         'sidebar-content': '20rem auto',
         'sidebar-content-toc': '20rem auto 20rem',
       },
+
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-pre-bg': color.gray['50'],
+          },
+        },
+      },
     },
   },
 

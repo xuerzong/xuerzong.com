@@ -34,7 +34,10 @@ const CopyBtn: React.FC<CopyBtnProps> = ({ className, onClick }) => {
     <button
       aria-label="copy"
       type="button"
-      className={cls('text-gray-200 transition-colors hover:text-primary-500', className)}
+      className={cls(
+        'text-gray-700 dark:text-gray-200 transition-colors hover:text-primary-500',
+        className
+      )}
       onClick={handleCopy}
     >
       {copiedState ? (

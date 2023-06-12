@@ -11,6 +11,7 @@ import GoogleAnalytics from '@/components/extends/GoogleAnalytics'
 import '@/styles/nprogress.css'
 import '@/styles/tailwind.css'
 import '@/styles/prism.css'
+import '@/styles/prism-dark.css'
 import '@/styles/global.css'
 
 const themeProviderProps: ThemeProviderProps = {
