@@ -1,168 +1,141 @@
+.dark {
+  /**
+  * Github Copilot theme for Prism.js
+  * Based on Github: https://copilot.github.com
+  * @author Katorly
+  */
+  /* General */
+  /* Line highlighting */
+  /* Tokens */
+}
 .dark .rehype-code-title {
   @apply bg-gray-700 text-gray-200;
 }
-.dark code[class*='language-'],
-.dark pre[class*='language-'] {
+.dark pre[class*='language-'],
+.dark code[class*='language-'] {
+  color: #ffffff;
+  font-size: 13px;
+  text-shadow: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  word-wrap: normal;
-  color: #eee;
-  background: transparent;
-  font-family: Recursive, monospace;
-  font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
   hyphens: none;
 }
-.dark code[class*='language-']::-moz-selection,
 .dark pre[class*='language-']::-moz-selection,
-.dark code[class*='language-'] ::-moz-selection,
-.dark pre[class*='language-'] ::-moz-selection {
-  background: #363636;
+.dark code[class*='language-']::-moz-selection {
+  text-shadow: none;
+  background: #27384e;
 }
-.dark code[class*='language-']::-moz-selection,
-.dark pre[class*='language-']::-moz-selection,
-.dark code[class*='language-'] ::-moz-selection,
-.dark pre[class*='language-'] ::-moz-selection {
-  background: #363636;
-}
-.dark code[class*='language-']::selection,
 .dark pre[class*='language-']::selection,
-.dark code[class*='language-'] ::selection,
-.dark pre[class*='language-'] ::selection {
-  background: #363636;
+.dark code[class*='language-']::selection,
+.dark pre[class*='language-']::mozselection,
+.dark code[class*='language-']::mozselection {
+  text-shadow: none;
+  background: #27384e;
 }
-.dark :not(pre) > code[class*='language-'] {
-  white-space: normal;
-  border-radius: 0.2em;
-  padding: 0.1em;
+@media print {
+  .dark pre[class*='language-'],
+  .dark code[class*='language-'] {
+    text-shadow: none;
+  }
 }
 .dark pre[class*='language-'] {
-  overflow: auto;
-  position: relative;
+  padding: 1em;
   margin: 0.5em 0;
-  padding: 1.25em 1em;
+  overflow: auto;
+  background: #24292f;
 }
-.dark .language-css > code,
-.dark .language-sass > code,
-.dark .language-scss > code {
-  color: #fd9170;
+.dark :not(pre) > code[class*='language-'] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  color: #ffffff;
+  background: #8b949e;
 }
-.dark [class*='language-'] .namespace {
+.dark pre[data-line] {
+  position: relative;
+}
+.dark pre[class*='language-'] > code[class*='language-'] {
+  position: relative;
+  z-index: 1;
+}
+.dark .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: #27384e;
+  box-shadow: inset 5px 0 0 #1f6fea;
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+.dark .namespace {
   opacity: 0.7;
 }
-.dark .token.atrule {
-  color: #c792ea;
-}
-.dark .token.attr-name {
-  color: #ffcb6b;
-}
-.dark .token.attr-value {
-  color: #a5e844;
-}
-.dark .token.attribute {
-  color: #a5e844;
-}
-.dark .token.boolean {
-  color: #c792ea;
-}
-.dark .token.builtin {
-  color: #ffcb6b;
-}
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
 .dark .token.cdata {
-  color: #80cbc4;
-}
-.dark .token.char {
-  color: #80cbc4;
-}
-.dark .token.class {
-  color: #ffcb6b;
-}
-.dark .token.class-name {
-  color: #f2ff00;
-}
-.dark .token.comment {
-  color: #616161;
-}
-.dark .token.constant {
-  color: #c792ea;
-}
-.dark .token.deleted {
-  color: #ff6666;
-}
-.dark .token.doctype {
-  color: #616161;
-}
-.dark .token.entity {
-  color: #ff6666;
-}
-.dark .token.function {
-  color: #c792ea;
-}
-.dark .token.hexcode {
-  color: #f2ff00;
-}
-.dark .token.id {
-  color: #c792ea;
-  font-weight: bold;
-}
-.dark .token.important {
-  color: #c792ea;
-  font-weight: bold;
-}
-.dark .token.inserted {
-  color: #80cbc4;
-}
-.dark .token.keyword {
-  color: #c792ea;
-}
-.dark .token.number {
-  color: #fd9170;
-}
-.dark .token.operator {
-  color: #89ddff;
-}
-.dark .token.prolog {
-  color: #616161;
-}
-.dark .token.property {
-  color: #80cbc4;
-}
-.dark .token.pseudo-class {
-  color: #a5e844;
-}
-.dark .token.pseudo-element {
-  color: #a5e844;
+  color: #8b949e;
 }
 .dark .token.punctuation {
-  color: #89ddff;
+  color: #ffffff;
 }
-.dark .token.regex {
-  color: #f2ff00;
+.dark .token.property,
+.dark .token.tag,
+.dark .token.boolean,
+.dark .token.number,
+.dark .token.constant,
+.dark .token.symbol,
+.dark .token.deleted {
+  color: #78bffe;
 }
-.dark .token.selector {
-  color: #ff6666;
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+  color: #a5d6ff;
 }
-.dark .token.string {
-  color: #a5e844;
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url,
+.dark .language-css .token.string,
+.dark .style .token.string {
+  color: #79bffe;
+  background: #24292f;
 }
-.dark .token.symbol {
-  color: #c792ea;
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+  color: #ff7b72;
 }
-.dark .token.tag {
-  color: #ff6666;
+.dark .token.function {
+  color: #d2a8ff;
 }
-.dark .token.unit {
-  color: #fd9170;
-}
-.dark .token.url {
-  color: #ff6666;
-}
+.dark .token.regex,
+.dark .token.important,
 .dark .token.variable {
-  color: #ff6666;
+  color: #fea557;
+}
+.dark .token.important,
+.dark .token.bold {
+  font-weight: bold;
+}
+.dark .token.italic {
+  font-style: italic;
+}
+.dark .token.entity {
+  cursor: help;
 } /*# sourceMappingURL=prism-dark.css.map */
