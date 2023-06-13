@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { JetBrains_Mono, Cantarell } from '@next/font/google'
+import { JetBrains_Mono, Cantarell } from 'next/font/google'
 import { KEYWORD_LIST } from '@/constants/config'
 import Header from './Header'
 import Footer from './Footer'
