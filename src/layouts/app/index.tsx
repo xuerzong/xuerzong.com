@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { JetBrains_Mono, Cantarell } from '@next/font/google'
 import { KEYWORD_LIST } from '@/constants/config'
 import Header from './Header'
 import Footer from './Footer'
@@ -10,11 +11,26 @@ type Props = {
   title?: string
 }
 
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+})
+
+const cantarell = Cantarell({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-sans',
+})
+
 const Layout: React.FC<Props> = ({ children }) => {
   const { pathname } = useRouter()
 
   useEffect(() => {
-    window.scrollTo({ top: 0 })
+    document.documentElement.classList.add(jetBrainsMono.variable, cantarell.variable)
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [pathname])
 
   return (

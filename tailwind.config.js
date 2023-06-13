@@ -30,8 +30,8 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ['Noto Sans SC', ...defaultTheme.fontFamily.sans],
-        mono: ['Recursive', ...defaultTheme.fontFamily.mono],
+        sans: ['var(--font-sans)', 'Noto Sans SC', ...defaultTheme.fontFamily.sans],
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
 
       gridTemplateColumns: {

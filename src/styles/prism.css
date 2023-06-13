@@ -10,6 +10,10 @@
   @apply rounded-t bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-700;
 }
 
+.dark .rehype-code-title {
+  @apply bg-gray-700 text-gray-200;
+}
+
 .rehype-code-title + div > pre {
   @apply mt-0 rounded-t-none;
 }
@@ -40,154 +44,205 @@
   content: attr(line);
 }
 
+:root {
+  /* background color */
+  --prism-color-background: theme(colors.slate.50);
+
+  /* base color */
+  --prism-color-base-primary: theme(colors.slate.700);
+  --prism-color-base-secondary: theme(colors.slate.500);
+
+  /* tokens color */
+  --prism-color-function: theme(colors.purple.700);
+  --prism-color-keyword: theme(colors.red.700);
+  --prism-color-number: theme(colors.violet.600);
+  --prism-color-string: theme(colors.blue.600);
+  --prism-color-tag: theme(colors.green.700);
+  --prism-color-parameter: theme(colors.orange.700);
+  --prism-color-property-access: theme(colors.blue.700);
+
+  /* tokens color, from base */
+  --prism-color-comment: var(--prism-color-base-secondary);
+  --prism-color-property: var(--prism-color-base-primary);
+  --prism-color-punctuation: var(--prism-color-base-secondary);
+}
+
+.dark {
+  /* background color */
+  --prism-color-background: #161e31;
+
+  /* base color */
+  --prism-color-base-primary: theme(colors.slate.300);
+  --prism-color-base-secondary: theme(colors.slate.400);
+
+  /* tokens color */
+  --prism-color-function: theme(colors.purple.400);
+  --prism-color-keyword: theme(colors.red.400);
+  --prism-color-number: theme(colors.violet.300);
+  --prism-color-string: theme(colors.blue.300);
+  --prism-color-tag: theme(colors.green.400);
+  --prism-color-parameter: theme(colors.orange.400);
+  --prism-color-property-access: theme(colors.blue.400);
+
+  /* tokens color, from base */
+  --prism-color-comment: var(--prism-color-base-secondary);
+  --prism-color-property: var(--prism-color-base-primary);
+  --prism-color-punctuation: var(--prism-color-base-secondary);
+}
+
 /**
- * Github Light theme for Prism.js
- * Based on Github: https://github.com
- * @author Katorly
+ * Base
  */
-/* General */
-pre[class*='language-'],
-code[class*='language-'] {
-  color: #24292f;
-  font-size: 13px;
-  text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
+pre > code,
+[class*='language-*'] {
+  .code-line {
+    @apply text-[var(--prism-color-base-primary)];
+  }
 
-pre[class*='language-']::selection,
-code[class*='language-']::selection,
-pre[class*='language-']::mozselection,
-code[class*='language-']::mozselection {
-  text-shadow: none;
-  background: #9fc6e9;
-}
+  .token {
+    &.tag,
+    &.selector {
+      @apply text-[var(--prism-color-tag)];
+    }
 
-@media print {
-  pre[class*='language-'],
-  code[class*='language-'] {
-    text-shadow: none;
+    &.punctuation,
+    &.operator {
+      @apply text-[var(--prism-color-punctuation)];
+    }
+
+    &.attr-name {
+      @apply text-[var(--prism-color-property-access)];
+    }
+
+    &.string,
+    &.attr-value {
+      @apply text-[var(--prism-color-string)];
+    }
+
+    &.number {
+      @apply text-[var(--prism-color-number)];
+    }
+
+    &.property {
+      @apply text-[var(--prism-color-property)];
+    }
+
+    &.function {
+      @apply text-[var(--prism-color-function)];
+    }
+
+    &.parameter {
+      @apply text-[var(--prism-color-parameter)];
+    }
+
+    &.comment {
+      @apply text-[var(--prism-color-comment)];
+    }
+
+    &.rule,
+    &.keyword {
+      @apply text-[var(--prism-color-keyword)];
+    }
   }
 }
 
-pre[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-  background: #f6f8fa;
+/**
+ * Some adjustments for specific languages
+ */
+
+.language-js,
+.language-javascript {
+  .code-line {
+    @apply text-[var(--prism-color-property-access)];
+  }
+
+  .token {
+    .property-access {
+      @apply text-[var(--prism-color-string)];
+    }
+  }
+
+  &.script {
+    &.language-javascript {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
 }
 
-:not(pre) > code[class*='language-'] {
-  padding: 0.1em 0.3em;
-  border-radius: 0.3em;
-  color: #24292f;
-  background: #eff1f3;
+.language-ts,
+.language-typescript {
+  .code-line {
+    @apply text-[var(--prism-color-property-access)];
+  }
+
+  &.script {
+    &.language-javascript {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
 }
 
-/* Line highlighting */
-pre[data-line] {
-  position: relative;
+.language-bash {
+  @apply text-[var(--prism-color-base-primary)];
+
+  .token {
+    &.parameter {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
 }
 
-pre[class*='language-'] > code[class*='language-'] {
-  position: relative;
-  z-index: 1;
+.language-css,
+.language-scss {
+  .code-line {
+    @apply text-[var(--prism-color-string)];
+  }
+
+  .token {
+    &.property,
+    &.number,
+    &.function,
+    &.selector .class {
+      @apply text-[var(--prism-color-string)];
+    }
+
+    &.unit {
+      @apply text-[var(--prism-color-keyword)];
+    }
+  }
 }
 
-.line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: #fff8c5;
-  box-shadow: inset 5px 0 0 #eed888;
-  z-index: 0;
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
+.language-json {
+  .code-line {
+    @apply text-[var(--prism-color-string)];
+  }
+
+  .token {
+    &.property,
+    &.number,
+    &.function,
+    &.selector .class {
+      @apply text-[var(--prism-color-tag)];
+    }
+  }
 }
 
-/* Tokens */
-.namespace {
-  opacity: 0.7;
-}
+/**
+ * Extensions
+ */
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #6e7781;
-}
+.code-highlight {
+  .code-line {
+    &.line-number {
+      &::before {
+        @apply text-[var(--prism-color-base-secondary)];
+      }
 
-.token.punctuation {
-  color: #24292f;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #0550ae;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #0a3069;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #0550ae;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  color: #cf222e;
-}
-
-.token.function {
-  color: #8250df;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  color: #0a3069;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
+      &.highlight-line {
+        &::before {
+          @apply text-[var(--prism-color-base-primary)];
+        }
+      }
+    }
+  }
 }
