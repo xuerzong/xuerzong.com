@@ -18,12 +18,12 @@ const PostHeader: React.FC<Pick<Post, 'title' | 'date' | 'readingTime'>> = ({
         <h1 className="text-3xl font-bold mb-6">{title}</h1>
 
         <div className="flex items-center space-x-6">
-          <div className="flex items-center font-mono">
+          <div className="flex items-center">
             <CalendarTime size={20} className="mr-2" />
             <span>{dayjs(date).format('YYYY/MM/DD')}</span>
           </div>
 
-          <div className="flex items-center font-mono">
+          <div className="flex items-center">
             <Book size={20} className="mr-2" />
             <span>{readingTimerFormat(readingTime.text)}</span>
           </div>

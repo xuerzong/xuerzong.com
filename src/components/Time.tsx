@@ -11,7 +11,7 @@ const Time: React.FC<PropsWithChildren> = ({ children }) => {
   }
 
   return (
-    <div className="font-mono">
+    <div>
       <Icon name="calendarOutlined" className="inline-block w-4 h-4 mr-1 align-[-.125em]" />
       <time className="leading-7">{dayjs(children).format(formatStr)}</time>
     </div>
