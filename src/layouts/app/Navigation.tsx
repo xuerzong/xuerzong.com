@@ -35,7 +35,7 @@ const navigations = [
 ]
 
 const Navigation: React.FC = () => {
-  const { pathname } = useRouter()
+  const { asPath } = useRouter()
   const [open, setOpen] = useState(false)
 
   const handleTriggerOpen = (newOpen: boolean) => {
@@ -69,7 +69,7 @@ const Navigation: React.FC = () => {
                 onClick={handleTriggerOpen.bind(null, false)}
                 className={cls('inline-flex items-center pl-2 pr-3 py-1 space-x-1 rounded', {
                   'text-primary-600 dark:text-primary-500 font-bold':
-                    item.path === '/' ? item.path === pathname : pathname.startsWith(item.path),
+                    item.path === '/' ? item.path === asPath : asPath.startsWith(item.path),
                 })}
               >
                 {React.createElement(item.icon, {
