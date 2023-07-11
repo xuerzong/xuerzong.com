@@ -2,7 +2,6 @@ import fs from 'fs'
 import sizeOf from 'image-size'
 import { Literal, Node, Parent } from 'unist'
 import { visit } from 'unist-util-visit'
-import { getPlaiceholder } from 'plaiceholder'
 
 type ImageNode = Parent & {
   url: string
@@ -15,7 +14,6 @@ const addImageProps = async (imageNode: ImageNode) => {
   // only local image
   if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
     const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
-    const { base64 } = await getPlaiceholder(imageNode.url)
 
     // Convert original node to next/image
     imageNode.type = 'mdxJsxFlowElement'
@@ -25,8 +23,6 @@ const addImageProps = async (imageNode: ImageNode) => {
       { type: 'mdxJsxAttribute', name: 'src', value: imageNode.url },
       { type: 'mdxJsxAttribute', name: 'width', value: dimensions.width },
       { type: 'mdxJsxAttribute', name: 'height', value: dimensions.height },
-      { type: 'mdxJsxAttribute', name: 'placeholder', value: 'blur' },
-      { type: 'mdxJsxAttribute', name: 'blurDataURL', value: base64 },
     ]
   }
 }
