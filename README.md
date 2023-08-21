@@ -47,7 +47,7 @@ date: 'YYYY-MM-DD'
 ### Configure the guestbook
 
 ```env
-# Mysql datebase url
+# Mysql database url
 # Example: mysql://<username>:<password>@<hostname>:<port>/<database>
 DATABASE_URL=
 
