@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import cls from 'classnames'
+import { slug } from 'github-slugger'
 import { ListBulletIcon } from '@heroicons/react/24/outline'
 import useWindowScroll from '@/hooks/useWindowScroll'
 import Link from '../mdx/Link'
@@ -21,7 +22,7 @@ const Toc: React.FC<Props> = ({ headings }) => {
   useWindowScroll(() => {
     let current = ''
     for (const { title } of headings) {
-      const element = document.getElementById(title)
+      const element = document.getElementById(slug(title))
       if (element && element.getBoundingClientRect().top < defaultOffset) {
         current = title
       }
@@ -30,7 +31,7 @@ const Toc: React.FC<Props> = ({ headings }) => {
   })
 
   return (
-    <div>
+    <div className="hidden lg:block relative">
       <ul className="sticky top-4 px-2 py-4 w-full">
         <div className="flex items-center space-x-2 text-sm font-bold mb-4">
           <ListBulletIcon className="w-6 h-6" />
@@ -42,7 +43,7 @@ const Toc: React.FC<Props> = ({ headings }) => {
             style={{ marginLeft: `${Math.max(depth - 1, 0)}rem` }}
             className={cls('py-1', { 'text-primary-500': activeHeading === title })}
           >
-            <Link href={`#${title}`}>
+            <Link href={`#${slug(title)}`}>
               <span>{title}</span>
             </Link>
           </li>
