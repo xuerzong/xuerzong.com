@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
 import { SessionProvider } from 'next-auth/react'
 import type { ThemeProviderProps } from 'next-themes/dist/types'
-import AppLayout from '@/layouts/app'
+import { AppLayout } from '@/layouts'
 import GoogleAnalytics from '@/components/extends/GoogleAnalytics'
 
 import '@/styles/nprogress.css'

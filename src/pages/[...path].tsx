@@ -1,19 +1,17 @@
 import type { GetStaticPaths, GetServerSideProps } from 'next'
 import { allPages, type Page as PageProps } from 'contentlayer/generated'
 import Hero from '@/components/extends/Hero'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import MDXComponents from '@/components/mdx'
 import Container from '@/components/Container'
 import SEO from '@/components/SEO'
+import MDXComponent from '@/components/extends/MDXComponent'
 
 const Page = ({ title, description, body }: PageProps) => {
-  const Component = useMDXComponent(body.code)
   return (
     <>
       <SEO title={title} description={description} />
       <Hero title={title} description={description} />
-      <Container size="lg" className="prose dark:prose-invert px-4 py-8">
-        <Component components={MDXComponents} />
+      <Container size="lg">
+        <MDXComponent content={body.code} className="py-8" />
       </Container>
     </>
   )
