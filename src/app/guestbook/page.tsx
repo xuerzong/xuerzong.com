@@ -1,10 +1,19 @@
+import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import Guestbook from './_components'
+
+const title = 'Guestbook'
+const description = 'Leave your footprints!!!'
+
+export const metadata: Metadata = {
+  title,
+  description,
+}
 
 const Page = async () => {
   return (
     <>
-      <Hero title="Guestbook" description="Leave your footprints!!!" />
+      <Hero title={title} description={description} />
       <Guestbook />
     </>
   )
