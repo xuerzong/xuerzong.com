@@ -11,7 +11,7 @@ interface CopyBtnProps {
 
 const CopyButton: React.FC<CopyBtnProps> = ({ className, onClick }) => {
   const [copied, setCopied] = useState(false)
-  const copyTimerRef = useRef<number>(null)
+  const copyTimerRef = useRef<number>(0)
   const [tooltipOpen, setTooltipOpen] = useDebounce(false, 300)
 
   useEffect(() => {
