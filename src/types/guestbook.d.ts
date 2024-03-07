@@ -4,5 +4,5 @@ type Guestbook = {
   name: string
   avatar: string
   content: string
-  createdAt: Date | null
+  created_at: Date | null
 }

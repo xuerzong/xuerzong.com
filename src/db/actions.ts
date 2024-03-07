@@ -15,7 +15,7 @@ export const insertGuestbook = async (formData: FormData) => {
   const content = formData.get('content')?.toString() || ''
 
   await sql`
-    INSERT INTO GUESTBOOKS (email, name, avatar, content)
+    INSERT INTO "GUESTBOOKS" (email, name, avatar, content)
     VALUES (${user.email}, ${user.name}, ${user.image}, ${content})
   `
 
