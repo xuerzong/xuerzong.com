@@ -25,7 +25,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: color.violet,
+        primary: color.yellow,
         dark: '#000000',
       },
 
@@ -46,8 +46,12 @@ module.exports = {
           },
         },
       },
+
+      transitionProperty: {
+        height: 'height',
+      },
     },
   },
 
-  plugins: [require('@tailwindcss/typography'), bgGridPlugin],
+  plugins: [bgGridPlugin],
 }

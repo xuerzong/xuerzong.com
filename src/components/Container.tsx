@@ -1,33 +1,18 @@
-import cls from 'classnames'
-import { type CSSProperties, type PropsWithChildren } from 'react'
+import { type PropsWithChildren, forwardRef } from 'react'
+import { cn } from '@/libs/utils/cn'
 
-interface ContainerProps {
-  size?: 'md' | 'lg' | 'xl' | '2xl'
+interface Props {
   className?: string
-  style?: CSSProperties
 }
 
-const Container: React.FC<PropsWithChildren<ContainerProps>> = ({
-  children,
-  className,
-  size = 'md',
-  ...restProps
-}) => (
-  <div
-    className={cls(
-      'mx-auto px-4',
-      {
-        'max-w-screen-md': size === 'md',
-        'max-w-screen-lg': size === 'lg',
-        'max-w-screen-xl': size === 'xl',
-        'max-w-screen-2xl': size === '2xl',
-      },
-      className
-    )}
-    {...restProps}
-  >
-    {children}
-  </div>
+const Container = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
+  ({ className, ...restProps }, ref) => {
+    return (
+      <div ref={ref} className={cn('max-w-screen-lg mx-auto px-4', className)} {...restProps} />
+    )
+  }
 )
+
+Container.displayName = 'Container'
 
 export default Container

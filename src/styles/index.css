@@ -1,0 +1,16 @@
+@import url('./tailwind.css');
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500;
+  transition: 0.25s;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: 0 0;
+}
