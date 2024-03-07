@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Container from '@/components/Container'
+
+export const metadata: Metadata = {
+  title: 'Not Found',
+  description: 'This page is not found...',
+}
 
 const NotFound = () => {
   return (

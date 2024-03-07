@@ -22,20 +22,22 @@ export const metadata: Metadata = {
     follow: true,
   },
   creator: 'xuerzong',
+  openGraph: {
+    title: CONFIG.SITE_TITLE,
+    description: CONFIG.SITE_DESCRIPTION,
+    url: CONFIG.SITE_URL,
+    siteName: CONFIG.SITE_TITLE,
+    type: 'website',
+    locale: 'en_US',
+  },
   twitter: {
     card: 'summary_large_image',
     title: CONFIG.SITE_TITLE,
     description: CONFIG.SITE_DESCRIPTION,
     site: `@${CONFIG.TWITTER}`,
-    // siteId: CONFIG.TWITTER,
+    siteId: CONFIG.TWITTER_ID,
     creator: `@${CONFIG.TWITTER}`,
-    // creatorId: CONFIG.TWITTER,
-    images: [
-      {
-        url: `${CONFIG.SITE_URL}/images/og-image.png`,
-        alt: CONFIG.SITE_DESCRIPTION,
-      },
-    ],
+    creatorId: CONFIG.TWITTER_ID,
   },
 }
 

@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "next",
     "build": "contentlayer build && next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "type-check": "tsc",
     "analyze": "cross-env ANALYZE=true next build",
@@ -81,7 +80,6 @@
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "next-sitemap": "^4.0.9",
     "postcss": "^8.4.5",
     "postgres": "^3.4.3",
     "prettier": "^3.2.4",
