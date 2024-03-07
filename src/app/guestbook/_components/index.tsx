@@ -8,7 +8,7 @@ const Guestbook: React.FC = async () => {
   const session = await auth()
   const isAuthed = session && session.user
   return (
-    <Container className="flex flex-col space-y-6 max-w-screen-md">
+    <Container className="max-w-screen-md">
       {isAuthed ? (
         <Form />
       ) : (
@@ -16,7 +16,9 @@ const Guestbook: React.FC = async () => {
           <GithubSignInButton />
         </div>
       )}
-      <List />
+      <div className="py-12">
+        <List />
+      </div>
     </Container>
   )
 }

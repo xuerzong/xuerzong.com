@@ -4,5 +4,5 @@ import { CamelKeys, camelKeys } from 'string-ts'
 export const getGuestbooks = async () => {
   noStore()
   const { rows } = await sql`SELECT * FROM "GUESTBOOKS" ORDER BY created_at DESC`
-  return camelKeys(rows) as CamelKeys<Guestbook>[]
+  return rows.map(camelKeys) as CamelKeys<Guestbook>[]
 }
