@@ -55,8 +55,12 @@ const Header = () => {
           <h1 className="font-bold w-32 uppercase">{WEB_NAME}</h1>
         </NextLink>
 
-        <div className="ml-auto mr-4 md:mr-auto">
+        <div className="ml-auto hidden md:block mr-auto">
           <Navigation />
+        </div>
+
+        <div className="ml-auto mr-4 block md:hidden">
+          <Navigation.Popover />
         </div>
 
         <div className="md:w-32 text-right">

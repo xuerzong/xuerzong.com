@@ -17,7 +17,7 @@ const animation: Variants = {
 const Hero: React.FC = () => {
   return (
     <GridBackground>
-      <Container className="relative flex flex-col items-center justify-center h-screen min-h-[640px]">
+      <Container className="relative flex flex-col items-center justify-center py-32 min-h-screen">
         <motion.div className="relative" {...animation}>
           <NextImage
             className="relative mb-8 z-10"
