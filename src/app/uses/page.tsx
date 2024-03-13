@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPageContent, getPageFrontmatter } from '@/content/queries'
+import { getPageContent, getPageFrontmatter } from '@/contents/queries'
 import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 
