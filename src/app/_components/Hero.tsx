@@ -21,12 +21,12 @@ const Hero: React.FC = () => {
         <motion.div className="relative" {...animation}>
           <NextImage
             className="relative mb-8 z-10"
-            width={360}
-            height={360}
+            width={320}
+            height={320}
             src="/static/assets/images/avatar.png"
             alt="avatar"
           />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-300 dark:bg-primary-700 blur-3xl rounded-full" />
+          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-300 dark:bg-primary-700 blur-3xl rounded-full" /> */}
         </motion.div>
 
         <motion.h2

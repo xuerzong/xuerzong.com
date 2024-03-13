@@ -1,36 +1,14 @@
 'use client'
 
-import { useScrollDirection } from 'react-use-scroll-direction'
 import { useScroll } from 'framer-motion'
-import { useMemo } from 'react'
 import NextLink from 'next/link'
 import cls from 'classnames'
 
 import Container from '@/components/Container'
-import usePrevious from '@/libs/hooks/usePrevious'
 import ThemeButton from './ThemeButton'
 import Navigation from './Navigation'
 
 const WEB_NAME = 'xuerzong'
-
-const useShowHeader = () => {
-  const { isScrollingUp, isScrollingDown } = useScrollDirection()
-  const isScrollingUpPrev = usePrevious(isScrollingUp)
-  const isScrollingDownPrev = usePrevious(isScrollingDown)
-
-  return useMemo(() => {
-    const scrollingUp = isScrollingUp || isScrollingUpPrev
-    const scrollingDown = isScrollingDown || isScrollingDownPrev
-
-    let result = true
-
-    if (scrollingUp) result = true
-
-    if (scrollingDown) result = false
-
-    return result
-  }, [isScrollingDown, isScrollingDownPrev, isScrollingUp, isScrollingUpPrev])
-}
 
 const useShowHeaderBg = () => {
   const { scrollY } = useScroll()
@@ -38,16 +16,11 @@ const useShowHeaderBg = () => {
 }
 
 const Header = () => {
-  const showHeader = useShowHeader()
-  const showHeaderBg = useShowHeaderBg()
   return (
     <header
       className={cls(
-        'fixed w-full z-50 overflow-hidden transition-height duration-150',
-        showHeader ? 'h-16' : 'h-0',
-        showHeaderBg
-          ? 'bg-white dark:bg-dark border-b border-gray-200 dark:border-gray-800'
-          : 'bg-transparent'
+        'fixed w-full z-50 overflow-hidden h-12 bg-white dark:bg-dark bg-opacity-50 border-b border-gray-200 dark:border-gray-800 transition-height duration-150',
+        'backdrop-blur-md backdrop-filter'
       )}
     >
       <Container className="flex items-center h-full">

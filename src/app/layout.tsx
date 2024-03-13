@@ -1,14 +1,9 @@
-import { Outfit } from 'next/font/google'
 import type { Metadata } from 'next'
 import ThemeProvider from '@/libs/providers/theme'
+import fonts from '@/fonts'
 import CONFIG from '@/constants/config'
 import Header from './_components/Header'
 import '@/styles/index.css'
-
-const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.SITE_URL),
@@ -45,7 +40,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${outfit.className} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
+        className={`${fonts.outfit.className} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
       >
         <ThemeProvider>
           <Header />
