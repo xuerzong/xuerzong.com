@@ -25,7 +25,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: color.yellow,
+        primary: {
+          50: '#effef0',
+          100: '#dafedb',
+          200: '#b7fbbb',
+          300: '#7ff687',
+          400: '#33e63f',
+          500: '#17d024',
+          600: '#0dac19',
+          700: '#0e8717',
+          800: '#116a18',
+          900: '#105717',
+          950: '#023108',
+        },
         dark: '#000000',
       },
 

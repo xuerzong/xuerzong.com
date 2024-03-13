@@ -23,7 +23,7 @@ const ThemeButton: React.FC = () => {
       aria-label="theme-btn"
       onClick={() => setTheme(isDarkTheme ? Theme.Light : Theme.Dark)}
     >
-      {isDarkTheme ? <MoonIcon className="w-6 h-6" /> : <SunIcon className="w-6 h-6" />}
+      {isDarkTheme ? <MoonIcon className="w-4 h-4" /> : <SunIcon className="w-4 h-4" />}
     </motion.button>
   )
 }

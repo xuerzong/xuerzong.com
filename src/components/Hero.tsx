@@ -1,10 +1,9 @@
 'use client'
 
-import type { PropsWithChildren } from 'react'
 import { motion, type Variants } from 'framer-motion'
-import { twMerge } from 'tailwind-merge'
 import GridBackground from './GridBackground'
 import Container from './Container'
+import { cn } from '@/libs/utils/cn'
 
 interface Props {
   title?: React.ReactNode
@@ -17,12 +16,12 @@ const animation: Variants = {
   animate: { opacity: 1, translateX: 0 },
 }
 
-const Hero: React.FC<PropsWithChildren<Props>> = ({ title, description, className, children }) => {
+const Hero: React.FC<Props> = ({ title, description, className }) => {
   return (
     <GridBackground>
       <Container
-        className={twMerge(
-          'relative z-10 flex flex-col justify-center pt-24 min-h-[320px]',
+        className={cn(
+          'max-w-screen-md relative z-10 flex flex-col justify-center pt-24 min-h-[320px]',
           className
         )}
       >

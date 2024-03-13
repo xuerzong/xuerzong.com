@@ -5,8 +5,10 @@ import Pre from './Pre'
 import H2 from './H2'
 import H3 from './H3'
 import type { MDXComponents } from '@mdx-js/react/lib'
+import P from './P'
 
 const mdxComponents = {
+  p: P,
   a: Link,
   pre: Pre,
   Image,

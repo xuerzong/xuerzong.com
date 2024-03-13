@@ -14,6 +14,10 @@ const menus = [
     path: '/guestbook',
   },
   {
+    name: 'About',
+    path: '/about',
+  },
+  {
     name: 'Uses',
     path: '/uses',
   },
@@ -43,7 +47,7 @@ const NavigationPopover: React.FC = () => {
     <Popover.Root>
       <Popover.Trigger asChild>
         <button className="p-2 bg-gray-200 dark:bg-gray-900 rounded">
-          <AdjustmentsHorizontalIcon className="w-6 h-6" />
+          <AdjustmentsHorizontalIcon className="w-4 h-4" />
         </button>
       </Popover.Trigger>
       <Popover.Portal>
