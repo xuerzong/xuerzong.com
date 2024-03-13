@@ -1,15 +1,29 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { getPageContent, getPageFrontmatter } from '@/contents/queries'
 import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 
 export const generateMetadata = async () => {
-  const frontmatter = await getPageFrontmatter('uses')
-  return { ...frontmatter }
+  const frontmatter = await getPageFrontmatter('about')
+  return {
+    ...frontmatter,
+    openGraph: { ...frontmatter },
+    twitter: { ...frontmatter },
+  } as Metadata
 }
 
-const Page = async () => {
-  const { success, content } = await getPageContent('uses')
+interface Params {
+  slug: string[]
+}
+
+interface Props {
+  params: Params
+}
+
+const Page = async ({ params }: Props) => {
+  const slug = params.slug
+  const { success, content } = await getPageContent(slug.join('/'))
 
   if (!success) {
     return notFound()

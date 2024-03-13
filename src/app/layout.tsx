@@ -4,6 +4,7 @@ import fonts from '@/fonts'
 import CONFIG from '@/constants/config'
 import Header from './_components/Header'
 import '@/styles/index.css'
+import Footer from './_components/Footer'
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.SITE_URL),
@@ -45,6 +46,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
         <ThemeProvider>
           <Header />
           <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

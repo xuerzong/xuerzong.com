@@ -14,6 +14,10 @@ const menus = [
     path: '/guestbook',
   },
   {
+    name: 'About',
+    path: '/about',
+  },
+  {
     name: 'Uses',
     path: '/uses',
   },
