@@ -1,3 +1,4 @@
+'use client'
 import React, { type PropsWithChildren, useEffect, useRef, useState } from 'react'
 import cls from 'classnames'
 import { ClipboardDocumentIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'

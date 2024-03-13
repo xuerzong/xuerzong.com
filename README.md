@@ -6,9 +6,10 @@
 - [Typescript](https://www.typescriptlang.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [NextAuth](https://next-auth.js.org/)
-- [Headlessui](https://headlessui.com/)
+- [RadixUI](https://www.radix-ui.com/)
 - [Framer-motion](https://www.framer.com/motion/)
 - [MDX](https://mdxjs.com/)
+- [Progresql](https://www.postgresql.org/)
 
 ## How to use
 
@@ -24,37 +25,14 @@ yarn install
 yarn dev
 ```
 
-### Add a blog
-
-You can add your blog mdx files in the `/contents/posts`.
-
-The content of the mdx file is as follows:
-
-```mdx
----
-title: Your title
-description: Your description
-category: Your category
-tags:
-  - Your tag1
-  - Your tag2
-date: 'YYYY-MM-DD'
----
-
-## Your content
-```
-
 ### Configure the guestbook
 
-```env
-# Mysql database url
-# Example: mysql://<username>:<password>@<hostname>:<port>/<database>
-DATABASE_URL=
+There is an example .env file `.env.example`
 
-# User auth
-# Reference: https://next-auth.js.org/providers/github
-GITHUB_ID=
-GITHUB_SECRET=
+```env
+POSTGRES_URL=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
 AUTH_SECRET=
 ```
 

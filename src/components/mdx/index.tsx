@@ -1,13 +1,10 @@
-'use client'
-
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { twMerge } from 'tailwind-merge'
 import Table from './Table'
 import Image from 'next/image'
 import Link from './Link'
 import Pre from './Pre'
 import H2 from './H2'
 import H3 from './H3'
+import type { MDXComponents } from '@mdx-js/react/lib'
 
 const mdxComponents = {
   a: Link,
@@ -19,19 +16,6 @@ const mdxComponents = {
   tr: Table.Tr,
   th: Table.Th,
   td: Table.Td,
-} as any
-interface Props {
-  content?: string
-  className?: string
-}
+} as MDXComponents
 
-const MDXComponent: React.FC<Props> = ({ content = '', className }) => {
-  const Component = useMDXComponent(content)
-  return (
-    <article className={twMerge('prose max-w-none dark:prose-invert', className)}>
-      <Component components={mdxComponents} />
-    </article>
-  )
-}
-
-export default MDXComponent
+export default mdxComponents
