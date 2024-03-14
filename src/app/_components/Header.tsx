@@ -1,19 +1,12 @@
 'use client'
 
-import { useScroll } from 'framer-motion'
 import NextLink from 'next/link'
 import cls from 'classnames'
 
 import Container from '@/components/Container'
+import CONFIG from '@/constants/config'
 import ThemeButton from './ThemeButton'
 import Navigation from './Navigation'
-
-const WEB_NAME = 'xuerzong'
-
-const useShowHeaderBg = () => {
-  const { scrollY } = useScroll()
-  return scrollY.get() >= 64
-}
 
 const Header = () => {
   return (
@@ -25,7 +18,7 @@ const Header = () => {
     >
       <Container className="flex items-center h-full">
         <NextLink href="/">
-          <h1 className="font-bold w-32 uppercase">{WEB_NAME}</h1>
+          <h1 className="font-bold w-32 uppercase">{CONFIG.WEB_AUTHOR}</h1>
         </NextLink>
 
         <div className="ml-auto hidden md:block mr-auto">
