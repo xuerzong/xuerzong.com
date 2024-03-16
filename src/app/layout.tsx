@@ -41,7 +41,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fonts.outfit.className} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
+        className={`${fonts.outfit.className} ${fonts.jetBrainsMono.variable} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
       >
         <ThemeProvider>
           <Header />

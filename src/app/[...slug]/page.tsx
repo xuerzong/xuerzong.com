@@ -33,7 +33,7 @@ const Page = async ({ params }: Props) => {
   return (
     <>
       <Hero title={content.frontmatter.title} description={content.frontmatter.description} />
-      <Container className="max-w-screen-md pb-20">{content.content}</Container>
+      <Container className="mdx max-w-screen-md pb-20">{content.content}</Container>
     </>
   )
 }

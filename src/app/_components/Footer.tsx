@@ -62,7 +62,7 @@ const FooterBanner = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className="border-t border-gray-200 dark:border-gray-800">
       <Container className="max-w-screen-md flex flex-col space-y-8 py-12">
         <FooterLinks />
         <FooterBanner />
