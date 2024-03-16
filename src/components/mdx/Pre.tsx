@@ -67,7 +67,7 @@ const CopyButton: React.FC<CopyBtnProps> = ({ className, onClick }) => {
               'bg-white dark:bg-gray-700'
             )}
           >
-            {copied ? '复制成功' : '点击复制'}
+            {copied ? 'Copied' : 'Copy'}
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>

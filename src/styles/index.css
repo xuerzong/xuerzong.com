@@ -1,4 +1,6 @@
 @import url('./tailwind.css');
+@import url('./mdx.css');
+@import url('./prisma.css');
 
 ::-webkit-scrollbar {
   width: 7px;

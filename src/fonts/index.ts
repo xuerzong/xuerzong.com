@@ -12,8 +12,24 @@ const outfit = localFont({
     },
   ],
   display: 'swap',
+  variable: '--font-sans',
 })
 
-const fonts = { outfit }
+const jetBrainsMono = localFont({
+  src: [
+    {
+      path: './JetBrainsMono-Regular.ttf',
+      weight: '400',
+    },
+    {
+      path: './JetBrainsMono-Bold.ttf',
+      weight: '700',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-mono',
+})
+
+const fonts = { outfit, jetBrainsMono }
 
 export default fonts

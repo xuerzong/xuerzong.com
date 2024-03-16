@@ -1,0 +1,7 @@
+.mdx p code {
+  @apply font-sans bg-primary-200 px-1 rounded;
+}
+
+.dark .mdx p code {
+  @apply bg-primary-800;
+}

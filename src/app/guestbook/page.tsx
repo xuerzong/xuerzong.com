@@ -8,6 +8,14 @@ const description = 'Leave your footprints!!!'
 export const metadata: Metadata = {
   title,
   description,
+  twitter: {
+    title,
+    description,
+  },
+  openGraph: {
+    title,
+    description,
+  },
 }
 
 const Page = async () => {

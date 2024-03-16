@@ -4,15 +4,6 @@ import { getPageContent, getPageFrontmatter } from '@/contents/queries'
 import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 
-export const generateMetadata = async () => {
-  const frontmatter = await getPageFrontmatter('about')
-  return {
-    ...frontmatter,
-    openGraph: { ...frontmatter },
-    twitter: { ...frontmatter },
-  } as Metadata
-}
-
 interface Params {
   slug: string[]
 }
@@ -21,8 +12,18 @@ interface Props {
   params: Params
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const slug = params.slug || []
+  const frontmatter = await getPageFrontmatter(slug.join('/'))
+  return {
+    ...frontmatter,
+    openGraph: { ...frontmatter },
+    twitter: { ...frontmatter },
+  } as Metadata
+}
+
 const Page = async ({ params }: Props) => {
-  const slug = params.slug
+  const slug = params.slug || []
   const { success, content } = await getPageContent(slug.join('/'))
 
   if (!success) {
@@ -32,7 +33,7 @@ const Page = async ({ params }: Props) => {
   return (
     <>
       <Hero title={content.frontmatter.title} description={content.frontmatter.description} />
-      <Container className="max-w-screen-md pb-20">{content.content}</Container>
+      <Container className="mdx max-w-screen-md pb-20">{content.content}</Container>
     </>
   )
 }
