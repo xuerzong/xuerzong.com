@@ -1,5 +1,7 @@
 # Personal blog
 
+![HERO](./public/hero.png)
+
 ## Stack
 
 - [NextJS](https://nextjs.org/)
