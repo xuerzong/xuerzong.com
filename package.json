@@ -58,7 +58,7 @@
     "remark-react": "^9.0.1",
     "remark-rehype": "^11.1.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "sonner": "^0.6.1",
+    "sonner": "^1.4.41",
     "string-ts": "^2.0.0",
     "swr": "^2.1.5",
     "tabler-icons-react": "^1.54.0",
