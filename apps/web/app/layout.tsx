@@ -3,7 +3,7 @@ import ThemeProvider from '@/libs/providers/theme'
 import fonts from '@/fonts'
 import CONFIG from '@/constants/config'
 import Header from './_components/Header'
-import '@/styles/index.css'
+import 'styles/index.css'
 import Footer from './_components/Footer'
 
 export const metadata: Metadata = {
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: React.PropsWithChildren) => {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={fonts.GeistSans.className} suppressHydrationWarning>
       <body
-        className={`${fonts.outfit.className} ${fonts.jetBrainsMono.variable} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
+        className={`${fonts.JetBrainsMono.variable} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
       >
         <ThemeProvider>
           <Header />

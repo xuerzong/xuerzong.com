@@ -1,11 +1,14 @@
 import * as React from 'react'
 import { type Pluggable } from 'unified'
-import { compile } from '@mdx-js/mdx'
+import { compile, UseMdxComponents } from '@mdx-js/mdx'
 import { VFile, type VFileCompatible } from 'vfile'
 import { matter } from 'vfile-matter'
 import * as jsxDevRuntime from 'react/jsx-dev-runtime'
 import * as jsxRuntime from 'react/jsx-runtime'
-import { type MDXComponents } from '@mdx-js/react/lib'
+
+export type Frontmatter = Record<string, any>
+
+export type MDXComponents = ReturnType<UseMdxComponents>
 
 export type MarkdownOptions = {
   components?: MDXComponents
