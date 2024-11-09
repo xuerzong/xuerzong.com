@@ -1,0 +1,7 @@
+.mdx p code {
+  @apply font-mono bg-primary px-1 rounded;
+}
+
+.dark .mdx p code {
+  @apply bg-primary;
+}

@@ -21,28 +21,18 @@ const bgGridPlugin = plugin(({ addUtilities }) => {
 
 module.exports = {
   darkMode: 'class',
-  content: ['./src/**/*.tsx'],
+  content: ['app/**/*.tsx', 'components/**/*.tsx'],
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#effef0',
-          100: '#dafedb',
-          200: '#b7fbbb',
-          300: '#7ff687',
-          400: '#33e63f',
-          500: '#17d024',
-          600: '#0dac19',
-          700: '#0e8717',
-          800: '#116a18',
-          900: '#105717',
-          950: '#023108',
+          DEFAULT: 'var(--primary-color)',
+          foreground: 'var(--primary-foreground-color)',
         },
         dark: '#000000',
       },
 
       fontFamily: {
-        sans: ['var(--font-sans)', 'Noto Sans SC', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
 

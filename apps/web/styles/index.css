@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-500;
+  @apply bg-primary;
   transition: 0.25s;
   border-radius: 2px;
 }

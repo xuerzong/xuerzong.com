@@ -35,9 +35,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.1 }}
         >
           I am
-          <span className="relative inline-block mx-2 py-2 font-bold text-primary-500">
-            Xu Cong
-          </span>
+          <span className="relative inline-block mx-2 py-2 font-bold text-primary">Xu Cong</span>
         </motion.h2>
 
         <motion.p
@@ -46,7 +44,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.2 }}
         >
           I just hope that the people I love and those who love me are in{' '}
-          <span className="text-primary-500 underline">good health</span>,
+          <span className="text-primary underline">good health</span>,
         </motion.p>
 
         <motion.p
@@ -54,7 +52,7 @@ const Hero: React.FC = () => {
           {...animation}
           transition={{ delay: 0.2 }}
         >
-          and that there is <span className="text-primary-500 underline">peace</span> in the world.
+          and that there is <span className="text-primary underline">peace</span> in the world.
         </motion.p>
 
         <motion.div {...animation} transition={{ delay: 0.3 }}>

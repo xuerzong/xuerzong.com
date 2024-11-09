@@ -1,9 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import mdxComponents from '@/components/mdx'
-import { mdx, frontmatter } from '@/libs/mdx'
+import { mdx, frontmatter } from '@xuerzong/mdx'
+import { flattenArray } from '@/libs/utils/array'
 
-const contentDir = path.resolve(process.cwd(), 'src', 'contents')
+const contentDir = path.resolve(process.cwd(), 'contents')
 
 const readFileContent = (type: 'pages' | 'posts', slug: string) => {
   return new Promise<string>((resolve, reject) => {
@@ -14,6 +15,24 @@ const readFileContent = (type: 'pages' | 'posts', slug: string) => {
     const source = fs.readFileSync(filePath, 'utf-8')
     resolve(source)
   })
+}
+
+export const getAllContents = async (type: 'pages' | 'posts') => {
+  const rootDir = path.resolve(contentDir, type)
+
+  const getFileName = (filePath: string): string[] => {
+    const fileStat = fs.statSync(filePath)
+    if (fileStat.isDirectory()) {
+      const files = fs.readdirSync(filePath)
+      const fileNames = files.map((file) => getFileName(path.resolve(filePath, file)))
+      return flattenArray<string>(fileNames)
+    } else {
+      return [filePath]
+    }
+  }
+  return getFileName(rootDir)
+    .map((p) => path.relative(rootDir, p).replace(/.mdx$/, ''))
+    .map((p) => p.split('/'))
 }
 
 type Content = {
