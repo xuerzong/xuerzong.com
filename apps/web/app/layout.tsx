@@ -5,6 +5,7 @@ import CONFIG from '@/constants/config'
 import Header from './_components/Header'
 import 'styles/index.css'
 import Footer from './_components/Footer'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.SITE_URL),
@@ -43,6 +44,10 @@ const Layout = ({ children }: React.PropsWithChildren) => {
       <body
         className={`${fonts.JetBrainsMono.variable} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
       >
+        <Script
+          src="https://umami.xuco.me/script.js"
+          data-website-id="2d3d68bf-7184-44b2-93da-a26a274418d9"
+        />
         <ThemeProvider>
           <Header />
           <main>{children}</main>
