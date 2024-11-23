@@ -18,9 +18,9 @@
 ### Development
 
 ```bash
-git clone https://github.com/xuerzong/xuco.me
+git clone https://github.com/xuerzong/xuerzong.com
 
-cd xuco.me
+cd xuerzong.com
 
 yarn install
 
