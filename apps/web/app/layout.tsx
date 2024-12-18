@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: React.PropsWithChildren) => {
   return (
-    <html lang="en" className={fonts.GeistSans.className} suppressHydrationWarning>
+    <html lang="en" className={fonts.RecursiveFont.className} suppressHydrationWarning>
       <body
         className={`${fonts.JetBrainsMono.variable} bg-white text-slate-900 dark:bg-dark dark:text-slate-50`}
       >
