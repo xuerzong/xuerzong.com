@@ -12,4 +12,5 @@ export const {
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     }),
   ],
+  basePath: '/api/auth',
 })
