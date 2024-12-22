@@ -3,7 +3,7 @@ FROM node:22-alpine as base
 # install dependencies
 FROM base as deps
 
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN apk add --no-cache libc6-compat openssl
 
