@@ -49,4 +49,6 @@ ENV PORT = 3000
 
 EXPOSE 3000
 
-CMD HOSTNAME="0.0.0.0" node server.js
+
+ENV HOSTNAME="0.0.0.0"
+CMD [ "node", "apps/web/server.js" ]
